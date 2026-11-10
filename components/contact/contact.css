@@ -61,7 +61,7 @@
   }
 
   .contact__heading {
-    font-size: calc(var(--u) * 62);
+    font-size: calc(var(--u) * 54);
   }
 
   .contact__text {

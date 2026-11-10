@@ -36,7 +36,8 @@ portfolio/
 │   ├── section-heading/ section-heading.css         ← big "WORKS" / "ABOUT" titles (shared)
 │   ├── projects/      projects.css, projects.js     ← project cards + 3D tilt
 │   ├── about/         about.css                     ← experience, education, toolkit
-│   ├── contact/       contact.css                   ← "Let's build something." + buttons
+│   ├── contact/       contact.css                   ← "Let's build something." + email button
+│   ├── social-links/  social-links.css              ← LinkedIn · GitHub · Facebook · Instagram tiles
 │   └── footer/        footer.css
 └── scripts/
     ├── main.js                   ← entry point: starts every component
@@ -56,6 +57,7 @@ portfolio/
 | The 3D object (colours, shapes, speed) | `components/hero/hero-scene.js` → the `COLORS` object at the top |
 | Add a project | Copy an `<article class="project-card">` (large) or `<a class="project-mini">` (small) in `index.html` |
 | The statement paragraph | `index.html` → `.statement__text`; wrap a word in `<strong>` for the wide font |
+| Social media links | `index.html` → `<ul class="social-links">`: copy an `<li>` to add a network |
 | A number that counts up | Any element with `data-count="10" data-count-suffix="+"` |
 
 ## Conventions

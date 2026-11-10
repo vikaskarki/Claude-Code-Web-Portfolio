@@ -1,0 +1,97 @@
+/* ==========================================================================
+   Social links — row of tiles in the Contact section
+   Each tile: brand icon (top left), ↗ (top right), network name + handle.
+   To add a network, copy one <li class="social-links__item"> in index.html,
+   then change the href, the icon <svg> and the text.
+   Markup: index.html → <ul class="social-links">
+   ========================================================================== */
+
+.social-links {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: calc(var(--u) * 14);
+  margin-top: calc(var(--u) * 56);
+  list-style: none;
+}
+
+.social-links__link {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: calc(var(--u) * 150);
+  padding: calc(var(--u) * 22);
+  color: var(--color-charcoal);
+  border: 1px solid rgba(28, 28, 31, .18);
+  border-radius: calc(var(--u) * 14);
+  transition: transform .4s var(--ease-out), background .35s, color .35s, border-color .35s;
+}
+
+.social-links__link:hover,
+.social-links__link:focus-visible {
+  transform: translateY(calc(var(--u) * -6));
+  color: var(--color-ivory);
+  background: var(--color-wine);
+  border-color: var(--color-wine);
+}
+
+.social-links__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.social-links__icon {
+  width: calc(var(--u) * 30);
+  height: calc(var(--u) * 30);
+}
+
+.social-links__arrow {
+  font-size: calc(var(--u) * 18);
+  transition: transform .4s var(--ease-out);
+}
+
+.social-links__link:hover .social-links__arrow {
+  transform: rotate(45deg);
+}
+
+.social-links__name {
+  display: block;
+  font-size: calc(var(--u) * 22);
+  font-weight: 500;
+  letter-spacing: -.02em;
+}
+
+.social-links__handle {
+  display: block;
+  margin-top: calc(var(--u) * 4);
+  font-size: calc(var(--u) * 13);
+  opacity: .65;
+}
+
+/* ---- Phone: 2 × 2 grid ---------------------------------------------------- */
+@media (max-width: 760px) {
+  .social-links {
+    grid-template-columns: 1fr 1fr;
+    gap: calc(var(--u) * 10);
+    margin-top: calc(var(--u) * 36);
+  }
+
+  .social-links__link {
+    min-height: calc(var(--u) * 130);
+    padding: calc(var(--u) * 16);
+  }
+
+  .social-links__icon {
+    width: calc(var(--u) * 26);
+    height: calc(var(--u) * 26);
+  }
+
+  .social-links__name {
+    font-size: calc(var(--u) * 18);
+  }
+
+  .social-links__handle {
+    font-size: calc(var(--u) * 12);
+    overflow-wrap: anywhere;
+  }
+}
