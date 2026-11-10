@@ -1,0 +1,32 @@
+/* ==========================================================================
+   Small reusable helpers
+   ========================================================================== */
+
+/* Burgundy bullet dot used before labels, e.g. "● (ABOUT)" */
+.dot {
+  display: inline-block;
+  width: .55em;
+  height: .55em;
+  border-radius: 50%;
+  background: var(--color-burgundy);
+  vertical-align: .08em;
+  margin-right: .45em;
+}
+
+/* Frosted-glass surface for pills and round buttons on light backgrounds */
+.glass {
+  background: rgba(242, 239, 234, .42);
+  backdrop-filter: blur(14px) saturate(1.2);
+  -webkit-backdrop-filter: blur(14px) saturate(1.2);
+  border: 1px solid rgba(255, 255, 255, .55);
+}
+
+/* Hidden visually, still read by screen readers */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}

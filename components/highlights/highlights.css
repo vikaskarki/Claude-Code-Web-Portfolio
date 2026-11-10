@@ -1,0 +1,306 @@
+/* ==========================================================================
+   Highlights — bordered panel after the statement:
+     left  → "Bridging Code, Data, Campaigns & AI" + two glass tiles + text
+     right → three cards:
+       .highlight-card--skills      (8 skill chips + "10 Public GitHub repositories")
+       .highlight-card--experience  ("1+ yr", laurel badge, note)
+       .highlight-card--location    ("Based in Lalitpur, Nepal", cut off by the panel edge)
+   Markup: index.html → <section class="highlights" id="highlights">
+   Behaviour: components/highlights/highlights.js (counters + chip pop-in)
+   ========================================================================== */
+
+.highlights {
+  padding: 0 0 calc(var(--u) * 150);
+  color: var(--color-ivory);
+  background: var(--color-charcoal);
+}
+
+.highlights__panel {
+  position: relative;
+  display: flex;
+  gap: calc(var(--u) * 12);
+  width: calc(var(--u) * 1302);
+  height: calc(var(--u) * 429);
+  margin: 0 auto;
+  padding: calc(var(--u) * 50) 0 calc(var(--u) * 50) calc(var(--u) * 48);
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  border-radius: calc(var(--u) * 14);
+}
+
+/* ---- Left column ---------------------------------------------------------- */
+.highlights__intro {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-right: calc(var(--u) * 30);
+}
+
+.highlights__heading {
+  font-size: calc(var(--u) * 55);
+  font-weight: 500;
+  line-height: 1.02;
+  letter-spacing: -.035em;
+}
+
+.highlights__heading-muted {
+  color: var(--color-grey-dark);
+}
+
+.highlights__text {
+  max-width: calc(var(--u) * 380);
+  font-size: calc(var(--u) * 14.5);
+  line-height: 1.5;
+  color: var(--color-grey);
+}
+
+/* Frosted decorative tiles overlapping the heading */
+.highlights__tile {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: calc(var(--u) * 88);
+  height: calc(var(--u) * 88);
+  background: rgba(168, 165, 160, .18);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(242, 239, 234, .2);
+  border-radius: calc(var(--u) * 12);
+}
+
+.highlights__tile--asterisk {
+  left: calc(var(--u) * 255);
+  top: calc(var(--u) * -22);
+  transform: rotate(-8deg);
+}
+
+.highlights__tile--dots {
+  left: calc(var(--u) * 300);
+  top: calc(var(--u) * 118);
+  transform: rotate(7deg);
+}
+
+/* ---- Cards (shared) ------------------------------------------------------- */
+.highlight-card {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  height: calc(var(--u) * 326);
+  padding: calc(var(--u) * 20);
+  border-radius: calc(var(--u) * 8);
+  transition: transform .5s var(--ease-out);
+}
+
+.highlight-card:hover,
+.highlight-card.is-lifted {
+  transform: translateY(calc(var(--u) * -6));
+}
+
+.highlight-card__count {
+  font-size: calc(var(--u) * 43);
+  font-weight: 600;
+  letter-spacing: -.04em;
+  line-height: 1;
+}
+
+.highlight-card__caption {
+  margin-top: calc(var(--u) * 6);
+  font-size: calc(var(--u) * 13);
+}
+
+/* ---- Skills card ---------------------------------------------------------- */
+.highlight-card--skills {
+  width: calc(var(--u) * 293);
+  color: var(--color-charcoal);
+  background: var(--color-sand);
+}
+
+.skill-chips {
+  display: grid;
+  grid-template-columns: repeat(4, calc(var(--u) * 48));
+  gap: calc(var(--u) * 12) calc(var(--u) * 14);
+  margin-bottom: auto;
+  list-style: none;
+}
+
+/* Starts small and invisible; highlights.js pops them in */
+.skill-chips__chip {
+  display: grid;
+  place-items: center;
+  width: calc(var(--u) * 48);
+  height: calc(var(--u) * 48);
+  font-size: calc(var(--u) * 12);
+  font-weight: 600;
+  letter-spacing: -.02em;
+  color: var(--color-ivory);
+  background: var(--color-charcoal);
+  border-radius: 50%;
+  transform: scale(.4);
+  opacity: 0;
+}
+
+.skill-chips__chip:nth-child(even) {
+  background: var(--color-slate);
+}
+
+.skill-chips__chip--accent {
+  background: var(--color-wine);
+}
+
+/* ---- Experience card ------------------------------------------------------ */
+.highlight-card--experience {
+  width: calc(var(--u) * 298);
+  background: var(--color-slate);
+}
+
+.highlight-card--experience .highlight-card__caption {
+  color: var(--color-grey);
+}
+
+.highlight-card__badge {
+  display: flex;
+  justify-content: center;
+  margin: auto 0;
+}
+
+.highlight-card__note {
+  padding-top: calc(var(--u) * 12);
+  font-size: calc(var(--u) * 12);
+  line-height: 1.45;
+  color: var(--color-grey);
+  border-top: 1px solid var(--line-soft);
+}
+
+/* ---- Location card -------------------------------------------------------- */
+.highlight-card--location {
+  position: relative;
+  width: calc(var(--u) * 200);
+  margin-right: calc(var(--u) * -60); /* runs off the panel's right edge */
+  padding: 0;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--color-wine), var(--color-slate));
+}
+
+.location-rings {
+  position: absolute;
+  left: 50%;
+  top: 38%;
+}
+
+.location-rings span {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(242, 239, 234, .28);
+  transform: translate(-50%, -50%);
+}
+
+.location-rings span:nth-child(1) {
+  width: calc(var(--u) * 70);
+  height: calc(var(--u) * 70);
+  background: var(--color-wine);
+  border-color: rgba(242, 239, 234, .4);
+}
+
+.location-rings span:nth-child(2) {
+  width: calc(var(--u) * 150);
+  height: calc(var(--u) * 150);
+}
+
+.location-rings span:nth-child(3) {
+  width: calc(var(--u) * 240);
+  height: calc(var(--u) * 240);
+  border-style: dashed;
+}
+
+.highlight-card__shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(28, 28, 31, 0) 50%, rgba(28, 28, 31, .6));
+}
+
+.highlight-card__place {
+  position: absolute;
+  left: calc(var(--u) * 16);
+  bottom: calc(var(--u) * 16);
+  font-size: calc(var(--u) * 22);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -.02em;
+}
+
+.highlight-card__place-label {
+  display: block;
+  margin-bottom: calc(var(--u) * 6);
+  font-size: calc(var(--u) * 12);
+  letter-spacing: 0;
+  color: var(--color-rose);
+}
+
+/* ---- Reduced motion: show chips straight away ----------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .skill-chips__chip {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+/* ---- Phone ---------------------------------------------------------------- */
+@media (max-width: 760px) {
+  .highlights {
+    padding: 0 calc(var(--u) * 16) calc(var(--u) * 90);
+  }
+
+  .highlights__panel {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: calc(var(--u) * 14);
+    padding: calc(var(--u) * 28) calc(var(--u) * 18);
+  }
+
+  .highlights__intro {
+    gap: calc(var(--u) * 20);
+    margin-bottom: calc(var(--u) * 10);
+    padding-right: 0;
+  }
+
+  .highlights__heading {
+    font-size: calc(var(--u) * 42);
+  }
+
+  .highlights__tile--asterisk {
+    left: auto;
+    right: 0;
+    top: calc(var(--u) * -10);
+    width: calc(var(--u) * 64);
+    height: calc(var(--u) * 64);
+  }
+
+  .highlights__tile--dots {
+    display: none;
+  }
+
+  .highlight-card {
+    width: 100%;
+    height: auto;
+    min-height: calc(var(--u) * 280);
+  }
+
+  .highlight-card--location {
+    margin-right: 0;
+    height: calc(var(--u) * 300);
+  }
+
+  .skill-chips {
+    grid-template-columns: repeat(4, calc(var(--u) * 52));
+    justify-content: space-between;
+    margin-bottom: calc(var(--u) * 30);
+  }
+
+  .skill-chips__chip {
+    width: calc(var(--u) * 52);
+    height: calc(var(--u) * 52);
+  }
+}

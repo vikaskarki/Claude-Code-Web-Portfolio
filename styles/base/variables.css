@@ -1,0 +1,51 @@
+/* ==========================================================================
+   Design tokens
+   Every colour, font and size used across the site is defined here.
+   Change a value once and it updates everywhere.
+   ========================================================================== */
+
+:root {
+  /* ---- Sizing unit -------------------------------------------------------
+     The layout was designed on a 1440px-wide artboard.
+     1 unit = 1px of that artboard, scaled to the screen width
+     (capped at 1.333px so it doesn't grow forever on huge screens).
+     Usage: width: calc(var(--u) * 340);  →  340 artboard pixels.
+     On phones (see bottom of this file) the artboard becomes 390px wide. */
+  --u: min(calc(100vw / 1440), 1.333px);
+
+  /* ---- Brand colours: burgundy and grey ------------------------------- */
+  --color-charcoal:      #1C1C1F;  /* dark sections, main text on light */
+  --color-charcoal-deep: #141416;
+  --color-slate:         #2E2E33;  /* cards on dark backgrounds */
+  --color-wine:          #6E1E2B;  /* buttons, primary burgundy */
+  --color-wine-dark:     #561722;  /* button hover */
+  --color-burgundy:      #A33447;  /* small accents: dots, icons */
+  --color-rose:          #D07A86;  /* accent text on dark backgrounds */
+
+  /* ---- Neutrals --------------------------------------------------------- */
+  --color-ivory:      #F2EFEA;  /* text on dark backgrounds */
+  --color-paper:      #E4E1DD;  /* light section backgrounds (hero, contact) */
+  --color-stone:      #D3D0CB;  /* hero stats frame */
+  --color-sand:       #DCD9D5;  /* light card in highlights */
+  --color-grey:       #A8A5A0;  /* secondary text on dark */
+  --color-grey-dark:  #5A5A5F;  /* muted text on dark, unfilled statement words */
+  --color-text-body:  #3A3A3E;  /* paragraph text on light */
+  --color-text-muted: #6B7280;  /* small labels on light */
+  --color-white:      #FFFFFF;
+
+  /* ---- Hairlines (borders on dark sections) --------------------------- */
+  --line-soft:   rgba(242, 239, 234, .16);
+  --line-strong: rgba(242, 239, 234, .28);
+
+  /* ---- Fonts ------------------------------------------------------------ */
+  --font-body:    'Inter Tight', system-ui, sans-serif;
+  --font-display: 'Archivo', 'Inter Tight', sans-serif;
+
+  /* ---- Motion ----------------------------------------------------------- */
+  --ease-out: cubic-bezier(.2, .8, .2, 1);
+}
+
+/* Phones: switch the artboard to 390px wide */
+@media (max-width: 760px) {
+  :root { --u: calc(100vw / 390); }
+}

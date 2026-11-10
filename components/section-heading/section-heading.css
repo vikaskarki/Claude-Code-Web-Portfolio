@@ -1,0 +1,57 @@
+/* ==========================================================================
+   Section heading — shared by the Works and About sections
+   Big display title with a small superscript on the left, a short
+   description on the right and a hairline underneath.
+   <div class="section-heading">
+     <h2 class="section-heading__title text-display">Works<sup class="section-heading__tag">(08)</sup></h2>
+     <p class="section-heading__aside">…</p>
+   </div>
+   ========================================================================== */
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: calc(var(--u) * 40);
+  padding-bottom: calc(var(--u) * 28);
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.section-heading__title {
+  font-size: calc(var(--u) * 120);
+  line-height: .85;
+}
+
+.section-heading__tag {
+  margin-left: .2em;
+  vertical-align: top;
+  font-family: var(--font-body);
+  font-size: .2em;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--color-rose);
+}
+
+.section-heading__aside {
+  font-size: calc(var(--u) * 14);
+  line-height: 1.5;
+  text-align: right;
+  color: var(--color-grey);
+}
+
+/* ---- Phone ---------------------------------------------------------------- */
+@media (max-width: 760px) {
+  .section-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: calc(var(--u) * 14);
+  }
+
+  .section-heading__title {
+    font-size: calc(var(--u) * 64);
+  }
+
+  .section-heading__aside {
+    text-align: left;
+  }
+}

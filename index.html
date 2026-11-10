@@ -1,798 +1,522 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bikash Karki — Engineer, Marketer, AI Builder</title>
-<meta name="description" content="Bikash Karki — Computer Engineering student and Digital Marketing Specialist building web apps, data-driven campaigns and AI automations from Lalitpur, Nepal.">
-<meta property="og:title" content="Bikash Karki — Engineer, Marketer, AI Builder">
-<meta property="og:description" content="Web apps, data-driven campaigns and AI automations.">
-<meta name="theme-color" content="#1C1C1F">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231C1C1F'/%3E%3Cpath d='M8 23 16 8l8 15z' fill='none' stroke='%23A33447' stroke-width='2.4'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@100..900&family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
-<script type="importmap">
-{ "imports": {
-  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
-  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
-} }
-</script>
-<style>
-:root{
-  --u:min(calc(100vw / 1440), 1.333px);
-  --navy:#1C1C1F; --navy-deep:#141416; --harbor:#2E2E33; --brass:#A33447; --brass-hi:#B83D52;
-  --mist:#A8A5A0; --cream:#F2EFEA; --oxford:#8A8784; --stone:#D3D0CB; --sand:#DCD9D5;
-  --dim:#5A5A5F; --paper:#E4E1DD; --wine:#6E1E2B; --rose:#D07A86;
-  --line:rgba(242,239,234,.16); --line-strong:rgba(242,239,234,.28);
-  --ui:'Inter Tight', system-ui, sans-serif; --disp:'Archivo', 'Inter Tight', sans-serif;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{background:var(--navy);-webkit-text-size-adjust:100%}
-body{font-family:var(--ui);font-weight:500;color:var(--navy);background:var(--navy);overflow-x:hidden;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}
-img{display:block}
-.disp{font-family:var(--disp);font-stretch:104%;font-weight:640;letter-spacing:-.06em;text-transform:uppercase}
-.wide{font-family:var(--disp);font-stretch:125%;font-weight:600;letter-spacing:.02em;text-transform:uppercase}
-.dot{display:inline-block;width:.55em;height:.55em;border-radius:50%;background:var(--brass);vertical-align:.08em;margin-right:.45em}
-.arrow{display:inline-block;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:calc(var(--u)*8);background:var(--wine);color:var(--cream);border-radius:calc(var(--u)*999);font-size:calc(var(--u)*14);font-weight:500;transition:transform .3s, background .3s, box-shadow .3s;white-space:nowrap}
-.btn:hover{transform:translateY(-1px);background:#561722;box-shadow:0 6px 18px rgba(28,28,31,.25)}
-.btn:hover .arrow{transform:translate(2px,-2px)}
-.btn.brass{background:var(--brass);color:var(--navy)}
-.btn.brass:hover{background:var(--brass-hi)}
-.glass{background:rgba(242,239,234,.42);backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2);border:1px solid rgba(255,255,255,.55)}
-:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-/* ============ HERO ============ */
-.hero{position:relative;height:calc(var(--u)*938);background:var(--paper);overflow:hidden;isolation:isolate}
-.hero>*{position:absolute}
-#gl{left:calc(var(--u)*300);top:calc(var(--u)*30);width:calc(var(--u)*840);height:calc(var(--u)*840);z-index:0}
-.photo{left:calc(var(--u)*470);top:calc(var(--u)*120);width:calc(var(--u)*500);height:calc(var(--u)*900);z-index:1;will-change:transform;border-radius:calc(var(--u)*250) calc(var(--u)*250) calc(var(--u)*14) calc(var(--u)*14);overflow:hidden;background:var(--harbor);box-shadow:0 30px 60px -20px rgba(28,28,31,.45), 0 0 0 1px rgba(28,28,31,.08)}
-.photo img{width:100%;height:100%;object-fit:cover;object-position:45% 22%;filter:saturate(.88) contrast(1.04);transform:scale(1.14);transform-origin:50% 30%;will-change:transform}
-.photo::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(28,28,31,.72) 0%,rgba(28,28,31,0) 38%),linear-gradient(180deg,rgba(110,30,43,.18),rgba(110,30,43,0) 30%);pointer-events:none}
-.hero.no-photo .photo{display:none}
-.hero.no-photo #gl{left:calc(var(--u)*320);top:calc(var(--u)*30);width:calc(var(--u)*800);height:calc(var(--u)*800)}
+  <!-- ===== SEO / sharing ===== -->
+  <title>Bikash Karki — Engineer, Marketer, AI Builder</title>
+  <meta name="description" content="Bikash Karki — Computer Engineering student and Digital Marketing Specialist building web apps, data-driven campaigns and AI automations from Lalitpur, Nepal.">
+  <meta property="og:title" content="Bikash Karki — Engineer, Marketer, AI Builder">
+  <meta property="og:description" content="Web apps, data-driven campaigns and AI automations.">
+  <meta name="theme-color" content="#1C1C1F">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
 
-.nav{left:calc(var(--u)*57);top:calc(var(--u)*61);height:calc(var(--u)*48);background:#fff;border-radius:calc(var(--u)*999);display:flex;align-items:center;padding:calc(var(--u)*5);z-index:5;box-shadow:0 1px 0 rgba(28,28,31,.04)}
-.nav a{position:relative;z-index:1;height:100%;display:flex;align-items:center;padding:0 calc(var(--u)*20);font-size:calc(var(--u)*14);border-radius:calc(var(--u)*999);transition:color .35s}
-.nav a.on{color:var(--cream)}
-.nav .pill{position:absolute;top:calc(var(--u)*5);bottom:calc(var(--u)*5);left:0;background:var(--navy);border-radius:calc(var(--u)*999);transition:transform .45s cubic-bezier(.2,.8,.2,1), width .45s cubic-bezier(.2,.8,.2,1)}
-.date{left:calc(var(--u)*1010);top:calc(var(--u)*70);font-size:calc(var(--u)*13);line-height:1.35;z-index:5}
-.date b{font-weight:500;color:#6B7280}
-.contact{left:calc(var(--u)*1237);top:calc(var(--u)*63);width:calc(var(--u)*144);height:calc(var(--u)*46);z-index:5}
-.contact .sq{display:none}
+  <!-- ===== Fonts: Inter Tight (body) + Archivo (display) ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@100..900&family=Archivo:wdth,wght@62..125,100..900&display=swap">
 
-.title{left:calc(var(--u)*57);top:calc(var(--u)*246);font-size:calc(var(--u)*90);line-height:.86;z-index:4}
-.title .ln{display:block;overflow:hidden;padding-bottom:.04em}
-.title .ln span{display:block}
-.yr{left:calc(var(--u)*398);top:calc(var(--u)*272);font-size:calc(var(--u)*15);z-index:4}
+  <!-- ===== Styles: base first, then one file per component (same order as the page) ===== -->
+  <link rel="stylesheet" href="styles/base/variables.css">
+  <link rel="stylesheet" href="styles/base/reset.css">
+  <link rel="stylesheet" href="styles/base/typography.css">
+  <link rel="stylesheet" href="styles/base/buttons.css">
+  <link rel="stylesheet" href="styles/base/utilities.css">
 
-.about{left:calc(var(--u)*57);top:calc(var(--u)*458);width:calc(var(--u)*300);z-index:4}
-.about .lbl{font-size:calc(var(--u)*13);margin-bottom:calc(var(--u)*18)}
-.about p{font-size:calc(var(--u)*14);line-height:1.5;color:#3A3A3E}
-.about .btn{position:absolute;top:calc(var(--u)*126);width:calc(var(--u)*150);height:calc(var(--u)*46)}
+  <link rel="stylesheet" href="components/header/header.css">
+  <link rel="stylesheet" href="components/navbar/navbar.css">
+  <link rel="stylesheet" href="components/hero/hero.css">
+  <link rel="stylesheet" href="components/hero/hero-stats.css">
+  <link rel="stylesheet" href="components/hero/hero-featured.css">
+  <link rel="stylesheet" href="components/scroll-strip/scroll-strip.css">
+  <link rel="stylesheet" href="components/statement/statement.css">
+  <link rel="stylesheet" href="components/highlights/highlights.css">
+  <link rel="stylesheet" href="components/section-heading/section-heading.css">
+  <link rel="stylesheet" href="components/projects/projects.css">
+  <link rel="stylesheet" href="components/about/about.css">
+  <link rel="stylesheet" href="components/contact/contact.css">
+  <link rel="stylesheet" href="components/footer/footer.css">
 
-.stats{left:calc(var(--u)*57);top:calc(var(--u)*693);width:calc(var(--u)*341);height:calc(var(--u)*208);background:var(--stone);border-radius:calc(var(--u)*10);padding:calc(var(--u)*6);display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--u)*6);z-index:4}
-.card-dark{background:var(--navy);color:var(--cream);border-radius:calc(var(--u)*7);padding:calc(var(--u)*12);display:flex;flex-direction:column}
-.card-dark .big{font-size:calc(var(--u)*28);font-weight:600;letter-spacing:-.03em;line-height:1}
-.card-dark .sm{font-size:calc(var(--u)*11);color:var(--mist);margin-top:calc(var(--u)*3)}
-.marks{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--u)*5) calc(var(--u)*6);margin:calc(var(--u)*12) 0 auto}
-.marks span{display:flex;align-items:center;gap:calc(var(--u)*4);font-size:calc(var(--u)*9.5);color:var(--cream);opacity:.85;white-space:nowrap}
-.marks i{width:calc(var(--u)*9);height:calc(var(--u)*9);display:inline-block;flex:none}
-.card-dark .bar{background:var(--cream);color:var(--navy);border-radius:calc(var(--u)*5);height:calc(var(--u)*28);display:flex;align-items:center;justify-content:space-between;padding:0 calc(var(--u)*10);font-size:calc(var(--u)*11);transition:background .3s}
-.card-dark .bar:hover{background:var(--wine);color:var(--cream)}
-.card-feed{position:relative;border-radius:calc(var(--u)*7);overflow:hidden;color:var(--cream);background:
-  radial-gradient(120% 90% at 80% 10%, #5A2430 0%, transparent 60%),
-  repeating-linear-gradient(0deg, rgba(242,239,234,.06) 0 1px, transparent 1px calc(var(--u)*14)),
-  repeating-linear-gradient(90deg, rgba(242,239,234,.06) 0 1px, transparent 1px calc(var(--u)*14)), var(--harbor)}
-.card-feed .ring{position:absolute;left:calc(var(--u)*-26);top:calc(var(--u)*40);width:calc(var(--u)*110);height:calc(var(--u)*110);border-radius:50%;border:1px solid rgba(163,52,71,.55);box-shadow:inset 0 0 0 calc(var(--u)*14) rgba(163,52,71,.06)}
-.card-feed .hd{position:absolute;left:calc(var(--u)*10);right:calc(var(--u)*10);top:calc(var(--u)*10);font-size:calc(var(--u)*9.5);display:flex;justify-content:space-between;padding-bottom:calc(var(--u)*6);border-bottom:1px solid rgba(242,239,234,.3)}
-.card-feed .ft{position:absolute;right:calc(var(--u)*10);bottom:calc(var(--u)*10);text-align:right}
-.card-feed .ft .big{font-size:calc(var(--u)*28);font-weight:600;letter-spacing:-.03em;line-height:1}
-.card-feed .ft .sm{font-size:calc(var(--u)*10);color:var(--mist);margin-top:calc(var(--u)*4);line-height:1.3}
+  <!-- ===== Three.js (3D hero) loaded from a CDN ===== -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
 
-.growth{left:calc(var(--u)*1206);top:calc(var(--u)*258);height:calc(var(--u)*44);border-radius:calc(var(--u)*999);display:flex;align-items:center;gap:calc(var(--u)*10);padding:0 calc(var(--u)*18) 0 calc(var(--u)*6);font-size:calc(var(--u)*14);z-index:4}
-.growth .chk{width:calc(var(--u)*32);height:calc(var(--u)*32);border-radius:50%;background:var(--navy);display:grid;place-items:center}
-.avail{right:calc(var(--u)*57);top:calc(var(--u)*442);text-align:right;font-size:calc(var(--u)*15);line-height:1.4;z-index:4}
-.out{right:calc(var(--u)*57);top:calc(var(--u)*540);width:calc(var(--u)*226);z-index:4}
-.out .meta{display:flex;justify-content:space-between;align-items:flex-end;font-size:calc(var(--u)*13);margin-bottom:calc(var(--u)*10);line-height:1.35}
-.out .meta b{font-weight:600;font-size:calc(var(--u)*15)}
-.out .meta em{font-style:normal;color:#6B7280}
-.qcard{position:relative;display:block;height:calc(var(--u)*196);border-radius:calc(var(--u)*10);overflow:hidden;background:var(--navy)}
-.qcard .scr{position:absolute;inset:0;transition:transform .8s cubic-bezier(.2,.8,.2,1);transform-origin:62% 45%}
-.qcard:hover .scr{transform:scale(1.08)}
-.mock{position:absolute;inset:calc(var(--u)*14);border-radius:calc(var(--u)*8);background:linear-gradient(160deg,#2A2A2E,#1A1A1D);border:1px solid rgba(242,239,234,.12);padding:calc(var(--u)*10);display:flex;flex-direction:column;gap:calc(var(--u)*6)}
-.mock .tb{display:flex;gap:calc(var(--u)*4);margin-bottom:calc(var(--u)*4)}
-.mock .tb i{width:calc(var(--u)*5);height:calc(var(--u)*5);border-radius:50%;background:rgba(242,239,234,.3)}
-.mock .msg{font-size:calc(var(--u)*9);line-height:1.3;padding:calc(var(--u)*5) calc(var(--u)*7);border-radius:calc(var(--u)*7);max-width:78%}
-.mock .msg.u{align-self:flex-end;background:var(--wine);color:var(--cream)}
-.mock .msg.b{background:rgba(242,239,234,.1);color:var(--cream)}
-.qcard .go{position:absolute;right:calc(var(--u)*10);bottom:calc(var(--u)*10);width:calc(var(--u)*36);height:calc(var(--u)*36);border-radius:50%;display:grid;place-items:center;color:var(--navy);transition:transform .45s cubic-bezier(.2,.8,.2,1)}
-.qcard:hover .go{transform:rotate(45deg)}
-.prog{margin-top:calc(var(--u)*12);height:2px;background:rgba(28,28,31,.18);position:relative;overflow:hidden;border-radius:2px}
-.prog i{position:absolute;inset:0 auto 0 0;width:38%;background:var(--navy);transform-origin:left}
-
-.plate{left:calc(var(--u)*538);top:calc(var(--u)*742);width:calc(var(--u)*364);height:calc(var(--u)*73);border-radius:calc(var(--u)*12);background:rgba(28,28,31,.52);backdrop-filter:blur(16px) saturate(1.3);-webkit-backdrop-filter:blur(16px) saturate(1.3);border:1px solid rgba(242,239,234,.18);display:flex;align-items:center;justify-content:space-between;padding:0 calc(var(--u)*22);color:var(--cream);z-index:3}
-.plate .wm{font-size:calc(var(--u)*25);font-stretch:125%;font-family:var(--disp);font-weight:700;letter-spacing:.04em}
-.plate .wm b{color:var(--rose);font-weight:700}
-.plate .menu{display:flex;flex-direction:column;gap:calc(var(--u)*6)}
-.plate .menu i{display:block;width:calc(var(--u)*22);height:2px;background:var(--cream)}
-.plate .menu i+i{width:calc(var(--u)*14);margin-left:auto}
-.logos{left:calc(var(--u)*510);top:calc(var(--u)*862);width:calc(var(--u)*420);display:flex;justify-content:space-between;color:var(--cream);font-size:calc(var(--u)*17);z-index:3;opacity:.9}
-.logos span{display:flex;align-items:center;gap:calc(var(--u)*7);font-weight:600;letter-spacing:-.02em}
-.hero.no-photo .logos{color:var(--navy);opacity:.75}
-
-/* ============ BAR ============ */
-.strip{height:calc(var(--u)*111);background:var(--navy);color:var(--cream);display:flex;align-items:center;justify-content:space-between;padding:0 calc(var(--u)*57);border-bottom:1px solid var(--line);font-size:calc(var(--u)*14)}
-.strip em{font-style:normal;color:var(--dim)}
-.strip .mid{display:flex;align-items:center;gap:calc(var(--u)*14)}
-.strip .rnd{width:calc(var(--u)*38);height:calc(var(--u)*38);border-radius:50%;background:var(--cream);color:var(--navy);display:grid;place-items:center;animation:bob 2.4s ease-in-out infinite}
-@keyframes bob{50%{transform:translateY(4px)}}
-
-/* ============ STATEMENT ============ */
-.statement{background:var(--navy);color:var(--cream);padding:calc(var(--u)*170) 0 calc(var(--u)*230);text-align:center}
-.statement h2{width:calc(var(--u)*880);margin:0 auto;font-size:calc(var(--u)*52);line-height:1.33;letter-spacing:-.028em;font-weight:500}
-.statement h2 .w{color:var(--dim)}
-.statement h2 .w.k{font-family:var(--disp);font-stretch:110%;font-weight:600;letter-spacing:-.04em}
-.statement .sub{margin-top:calc(var(--u)*150);font-size:calc(var(--u)*23);line-height:1.4;letter-spacing:-.01em}
-.statement .sub em{font-style:normal;color:var(--dim)}
-
-/* ============ TRUST / HIGHLIGHTS ============ */
-.trust{background:var(--navy);color:var(--cream);padding:0 0 calc(var(--u)*150)}
-.panel{position:relative;width:calc(var(--u)*1302);height:calc(var(--u)*429);margin:0 auto;border:1px solid var(--line-strong);border-radius:calc(var(--u)*14);overflow:hidden;display:flex;padding:calc(var(--u)*50) 0 calc(var(--u)*50) calc(var(--u)*48);gap:calc(var(--u)*12)}
-.panel .lft{position:relative;flex:1;display:flex;flex-direction:column;justify-content:space-between;padding-right:calc(var(--u)*30)}
-.panel h3{font-size:calc(var(--u)*55);font-weight:500;line-height:1.02;letter-spacing:-.035em}
-.panel h3 .g{color:var(--dim)}
-.panel p{font-size:calc(var(--u)*14.5);line-height:1.5;color:var(--mist);max-width:calc(var(--u)*380)}
-.tile{position:absolute;width:calc(var(--u)*88);height:calc(var(--u)*88);border-radius:calc(var(--u)*12);display:grid;place-items:center;background:rgba(168,165,160,.18);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(242,239,234,.2);transform:rotate(-8deg)}
-.tile.t1{left:calc(var(--u)*255);top:calc(var(--u)*-22)}
-.tile.t2{left:calc(var(--u)*300);top:calc(var(--u)*118);transform:rotate(7deg)}
-.tc{flex:none;height:calc(var(--u)*326);border-radius:calc(var(--u)*8);padding:calc(var(--u)*20);display:flex;flex-direction:column;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
-.tc:hover,.tc.lift{transform:translateY(calc(var(--u)*-6))}
-.tc.av{width:calc(var(--u)*293);background:var(--sand);color:var(--navy)}
-.avs{display:grid;grid-template-columns:repeat(4,calc(var(--u)*48));gap:calc(var(--u)*12) calc(var(--u)*14);margin-bottom:auto}
-.avs span{width:calc(var(--u)*48);height:calc(var(--u)*48);border-radius:50%;background:var(--navy);color:var(--cream);display:grid;place-items:center;font-size:calc(var(--u)*12);font-weight:600;letter-spacing:-.02em;transform:scale(.4);opacity:0}
-.avs span:nth-child(even){background:var(--harbor)}
-.avs span.b{background:var(--wine);color:var(--cream)}
-.tc .num{font-size:calc(var(--u)*43);font-weight:600;letter-spacing:-.04em;line-height:1}
-.tc .cap{font-size:calc(var(--u)*13);margin-top:calc(var(--u)*6)}
-.tc.aw{width:calc(var(--u)*298);background:var(--harbor)}
-.tc.aw .cap{color:var(--mist)}
-.badge{margin:auto 0;display:flex;justify-content:center}
-.tc.aw .note{font-size:calc(var(--u)*12);color:var(--mist);line-height:1.45;border-top:1px solid var(--line);padding-top:calc(var(--u)*12)}
-.tc.pt{width:calc(var(--u)*200);padding:0;overflow:hidden;position:relative;margin-right:calc(var(--u)*-60);background:linear-gradient(180deg,#6E1E2B,#2E2E33)}
-.tc.pt .rg{position:absolute;left:50%;top:38%}
-.tc.pt .rg i{position:absolute;border-radius:50%;border:1px solid rgba(242,239,234,.28);transform:translate(-50%,-50%)}
-.tc.pt .rg i:nth-child(1){width:calc(var(--u)*70);height:calc(var(--u)*70);background:var(--wine);border-color:rgba(242,239,234,.4)}
-.tc.pt .rg i:nth-child(2){width:calc(var(--u)*150);height:calc(var(--u)*150)}
-.tc.pt .rg i:nth-child(3){width:calc(var(--u)*240);height:calc(var(--u)*240);border-style:dashed}
-.tc.pt .ov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,28,31,0) 50%,rgba(28,28,31,.6))}
-.tc.pt .lb{position:absolute;left:calc(var(--u)*16);bottom:calc(var(--u)*16);font-size:calc(var(--u)*22);font-weight:500;letter-spacing:-.02em;line-height:1.1;color:var(--cream)}
-.tc.pt .lb span{display:block;font-size:calc(var(--u)*12);color:var(--rose);letter-spacing:0;margin-bottom:calc(var(--u)*6)}
-
-/* ============ WORKS ============ */
-.works{background:var(--navy);color:var(--cream);padding:0 calc(var(--u)*69) calc(var(--u)*150)}
-.sec-hd{display:flex;justify-content:space-between;align-items:flex-end;padding-bottom:calc(var(--u)*28);border-bottom:1px solid var(--line);margin-bottom:calc(var(--u)*40)}
-.sec-hd h2{font-size:calc(var(--u)*120);line-height:.85}
-.sec-hd h2 sup{font-size:.2em;letter-spacing:0;vertical-align:top;margin-left:.2em;font-family:var(--ui);font-weight:500;color:var(--rose)}
-.sec-hd .r{font-size:calc(var(--u)*14);color:var(--mist);text-align:right;line-height:1.5}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--u)*20);perspective:1400px}
-.wk{position:relative;display:flex;flex-direction:column;justify-content:space-between;height:calc(var(--u)*400);border-radius:calc(var(--u)*14);padding:calc(var(--u)*32);background:linear-gradient(155deg,#2A2A2E 0%,#222225 60%,#1A1A1D 100%);border:1px solid var(--line);overflow:hidden;transform-style:preserve-3d;transition:transform .5s cubic-bezier(.2,.8,.2,1), border-color .4s}
-.wk:hover{border-color:rgba(208,122,134,.5)}
-.wk .glow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%), rgba(163,52,71,.14), transparent 60%);opacity:0;transition:opacity .4s}
-.wk:hover .glow{opacity:1}
-.wk .n{position:absolute;right:calc(var(--u)*24);top:calc(var(--u)*-6);font-size:calc(var(--u)*200);line-height:1;color:rgba(242,239,234,.05);transform:translateZ(20px)}
-.wk .top{display:flex;justify-content:space-between;align-items:flex-start;transform:translateZ(40px)}
-.wk .kind{font-size:calc(var(--u)*13);color:var(--rose)}
-.wk .go{width:calc(var(--u)*48);height:calc(var(--u)*48);border-radius:50%;border:1px solid var(--line-strong);display:grid;place-items:center;transition:transform .45s cubic-bezier(.2,.8,.2,1), background .3s, color .3s}
-.wk:hover .go{transform:rotate(45deg);background:var(--wine);color:var(--cream);border-color:var(--wine)}
-.wk .bot{transform:translateZ(60px)}
-.wk h4{font-size:calc(var(--u)*44);font-weight:500;letter-spacing:-.035em;line-height:1.05;margin-bottom:calc(var(--u)*12)}
-.wk p{font-size:calc(var(--u)*15);line-height:1.5;color:var(--mist);max-width:calc(var(--u)*460);margin-bottom:calc(var(--u)*20)}
-.tags{display:flex;flex-wrap:wrap;gap:calc(var(--u)*8)}
-.tags span{font-size:calc(var(--u)*12);padding:calc(var(--u)*6) calc(var(--u)*12);border-radius:calc(var(--u)*999);border:1px solid var(--line-strong);color:var(--cream)}
-.links{display:flex;gap:calc(var(--u)*18);margin-top:calc(var(--u)*18);font-size:calc(var(--u)*13)}
-.links a{color:var(--cream);border-bottom:1px solid var(--line-strong);padding-bottom:2px;transition:color .3s,border-color .3s}
-.links a:hover{color:var(--rose);border-color:var(--rose)}
-.mini{display:grid;grid-template-columns:repeat(4,1fr);gap:calc(var(--u)*20);margin-top:calc(var(--u)*20)}
-.mini a{border:1px solid var(--line);border-radius:calc(var(--u)*12);padding:calc(var(--u)*22);display:flex;flex-direction:column;gap:calc(var(--u)*10);min-height:calc(var(--u)*180);transition:transform .4s cubic-bezier(.2,.8,.2,1), border-color .4s, background .4s}
-.mini a:hover{transform:translateY(calc(var(--u)*-6));border-color:rgba(163,52,71,.5);background:rgba(34,50,74,.5)}
-.mini .k{font-size:calc(var(--u)*12);color:var(--rose);display:flex;justify-content:space-between}
-.mini h5{font-size:calc(var(--u)*22);font-weight:500;letter-spacing:-.025em}
-.mini p{font-size:calc(var(--u)*13);color:var(--mist);line-height:1.45;margin-top:auto}
-
-/* ============ JOURNEY ============ */
-.journey{background:var(--navy);color:var(--cream);padding:0 calc(var(--u)*69) calc(var(--u)*150)}
-.cols{display:grid;grid-template-columns:1fr 1fr 1fr;gap:calc(var(--u)*48)}
-.col h6{font-size:calc(var(--u)*13);font-weight:500;color:var(--mist);margin-bottom:calc(var(--u)*18)}
-.it{border-top:1px solid var(--line);padding:calc(var(--u)*22) 0}
-.it .when{font-size:calc(var(--u)*12);color:var(--rose);margin-bottom:calc(var(--u)*8)}
-.it h5{font-size:calc(var(--u)*24);font-weight:500;letter-spacing:-.025em;line-height:1.15}
-.it .at{font-size:calc(var(--u)*14);color:var(--mist);margin:calc(var(--u)*4) 0 calc(var(--u)*12)}
-.it ul{list-style:none;display:flex;flex-direction:column;gap:calc(var(--u)*8)}
-.it li{font-size:calc(var(--u)*14);line-height:1.5;color:#C9D0DA;padding-left:calc(var(--u)*16);position:relative}
-.it li::before{content:"";position:absolute;left:0;top:.62em;width:calc(var(--u)*6);height:1px;background:var(--brass)}
-.sk{display:flex;flex-wrap:wrap;gap:calc(var(--u)*8);padding:calc(var(--u)*18) 0;border-top:1px solid var(--line)}
-.sk .t{width:100%;font-size:calc(var(--u)*12);color:var(--rose);margin-bottom:calc(var(--u)*2)}
-.sk span{font-size:calc(var(--u)*13);padding:calc(var(--u)*7) calc(var(--u)*13);border-radius:calc(var(--u)*999);background:rgba(34,50,74,.8);border:1px solid var(--line)}
-
-/* ============ CONTACT ============ */
-.cta{background:var(--paper);color:var(--navy);padding:calc(var(--u)*140) calc(var(--u)*69) 0;position:relative;overflow:hidden}
-.cta .lbl{font-size:calc(var(--u)*13);margin-bottom:calc(var(--u)*30)}
-.cta h2{font-size:calc(var(--u)*150);line-height:.84}
-.cta h2 .g{color:var(--wine)}
-.cta .row{display:flex;justify-content:space-between;align-items:flex-end;margin-top:calc(var(--u)*56);gap:calc(var(--u)*24);flex-wrap:wrap}
-.cta .row p{font-size:calc(var(--u)*18);line-height:1.5;max-width:calc(var(--u)*480);color:#3A3A3E}
-.cta .btns{display:flex;gap:calc(var(--u)*12);flex-wrap:wrap}
-.cta .btn{height:calc(var(--u)*56);padding:0 calc(var(--u)*28);font-size:calc(var(--u)*15)}
-.cta .btn.ghost{background:transparent;color:var(--navy);border:1px solid rgba(28,28,31,.3)}
-.cta .btn.ghost:hover{background:var(--navy);color:var(--cream)}
-.foot{display:flex;justify-content:space-between;align-items:center;margin-top:calc(var(--u)*120);padding:calc(var(--u)*28) 0;border-top:1px solid rgba(28,28,31,.15);font-size:calc(var(--u)*13);color:#4B5563}
-.foot a:hover{color:var(--navy)}
-
-/* ============ PHONE ============ */
-@media (max-width:760px){
-  :root{--u:calc(100vw / 390)}
-  .hero{height:auto;display:flex;flex-direction:column;padding:calc(var(--u)*20) calc(var(--u)*18) calc(var(--u)*24)}
-  .hero>*{position:relative;left:auto!important;top:auto!important;right:auto!important}
-  .hdr{display:flex}
-  .nav{order:1;height:calc(var(--u)*42);align-self:flex-start;margin-right:calc(var(--u)*52)}
-  .nav a{padding:0 calc(var(--u)*11);font-size:calc(var(--u)*13)}
-  .contact{order:1;position:absolute!important;right:calc(var(--u)*18)!important;top:calc(var(--u)*20)!important;left:auto!important;width:calc(var(--u)*42);height:calc(var(--u)*42);padding:0}
-  .contact .txt{display:none}.contact .sq{display:inline}
-  .date{order:2;margin-top:calc(var(--u)*18);font-size:calc(var(--u)*12)}
-  .title{order:3;margin-top:calc(var(--u)*34);font-size:calc(var(--u)*70)}
-  .yr{order:3;position:absolute!important;left:calc(var(--u)*318)!important;top:calc(var(--u)*150)!important;font-size:calc(var(--u)*13)}
-  .about{order:4;width:100%;margin-top:calc(var(--u)*30)}
-  .about p{font-size:calc(var(--u)*15)}
-  .about .btn{position:relative;top:auto;margin-top:calc(var(--u)*18);width:calc(var(--u)*160);height:calc(var(--u)*46);font-size:calc(var(--u)*14)}
-  .photo{order:5;width:100%;margin:calc(var(--u)*28) 0 0;height:calc(var(--u)*500);border-radius:calc(var(--u)*177) calc(var(--u)*177) calc(var(--u)*14) calc(var(--u)*14)}
-  .photo img{object-position:45% 20%}
-  #gl{order:5;position:absolute!important;left:50%!important;top:calc(var(--u)*390)!important;transform:translateX(-50%);width:calc(var(--u)*390);height:calc(var(--u)*390)}
-  .hero.no-photo #gl{position:relative!important;top:auto!important;left:auto!important;transform:none;margin:calc(var(--u)*10) auto 0;width:calc(var(--u)*340);height:calc(var(--u)*340)}
-  .plate{order:6;width:100%;height:calc(var(--u)*64);margin-top:calc(var(--u)*-150);padding:0 calc(var(--u)*18)}
-  .plate .wm{font-size:calc(var(--u)*21)}
-  .logos{order:6;width:100%;margin-top:calc(var(--u)*24);font-size:calc(var(--u)*13);justify-content:space-around}
-  .hero:not(.no-photo) .logos{display:none}
-  .hero:not(.no-photo) .plate{margin-top:calc(var(--u)*-84);margin-left:calc(var(--u)*14);width:calc(100% - var(--u)*28)}
-  .hero.no-photo .plate{margin-top:calc(var(--u)*-60)}
-  .growth{order:7;align-self:flex-start;margin-top:calc(var(--u)*30);height:calc(var(--u)*42);font-size:calc(var(--u)*14);padding-right:calc(var(--u)*16)}
-  .growth .chk{width:calc(var(--u)*30);height:calc(var(--u)*30)}
-  .avail{display:none}
-  .stats{order:8;width:100%;height:calc(var(--u)*230);margin-top:calc(var(--u)*16)}
-  .out{order:9;width:100%;margin-top:calc(var(--u)*26)}
-  .out .meta{font-size:calc(var(--u)*13)}
-  .qcard{height:calc(var(--u)*210)}
-  .strip{height:calc(var(--u)*80);padding:0 calc(var(--u)*18);font-size:calc(var(--u)*11)}
-  .strip .mid span{display:none}
-  .statement{padding:calc(var(--u)*90) calc(var(--u)*20) calc(var(--u)*110)}
-  .statement h2{width:100%;font-size:calc(var(--u)*28)}
-  .statement h2 br{display:none}
-  .statement .sub{margin-top:calc(var(--u)*60);font-size:calc(var(--u)*17)}
-  .statement .sub br{display:none}
-  .trust{padding:0 calc(var(--u)*16) calc(var(--u)*90)}
-  .panel{width:100%;height:auto;flex-direction:column;padding:calc(var(--u)*28) calc(var(--u)*18);gap:calc(var(--u)*14)}
-  .panel .lft{padding-right:0;gap:calc(var(--u)*20);margin-bottom:calc(var(--u)*10)}
-  .panel h3{font-size:calc(var(--u)*42)}
-  .tile.t1{left:auto;right:calc(var(--u)*0);top:calc(var(--u)*-10);width:calc(var(--u)*64);height:calc(var(--u)*64)}
-  .tile.t2{display:none}
-  .tc{width:100%!important;height:auto;min-height:calc(var(--u)*280)}
-  .tc.pt{margin-right:0;height:calc(var(--u)*300)}
-  .avs{grid-template-columns:repeat(4,calc(var(--u)*52));justify-content:space-between;margin-bottom:calc(var(--u)*30)}
-  .avs span{width:calc(var(--u)*52);height:calc(var(--u)*52)}
-  .works,.journey{padding:0 calc(var(--u)*16) calc(var(--u)*90)}
-  .sec-hd{flex-direction:column;align-items:flex-start;gap:calc(var(--u)*14)}
-  .sec-hd h2{font-size:calc(var(--u)*64)}
-  .sec-hd .r{text-align:left}
-  .grid{grid-template-columns:1fr}
-  .wk{height:auto;min-height:calc(var(--u)*360);padding:calc(var(--u)*24)}
-  .wk h4{font-size:calc(var(--u)*32)}
-  .wk p{font-size:calc(var(--u)*14)}
-  .wk .n{font-size:calc(var(--u)*140)}
-  .mini{grid-template-columns:1fr 1fr;gap:calc(var(--u)*12)}
-  .mini a{padding:calc(var(--u)*16);min-height:calc(var(--u)*170)}
-  .mini h5{font-size:calc(var(--u)*18)}
-  .cols{grid-template-columns:1fr;gap:calc(var(--u)*30)}
-  .cta{padding:calc(var(--u)*90) calc(var(--u)*18) 0}
-  .cta h2{font-size:calc(var(--u)*62)}
-  .cta .row p{font-size:calc(var(--u)*16)}
-  .cta .btn{height:calc(var(--u)*50);font-size:calc(var(--u)*14);padding:0 calc(var(--u)*20)}
-  .foot{flex-direction:column;gap:calc(var(--u)*8);align-items:flex-start;margin-top:calc(var(--u)*70)}
-}
-@media (prefers-reduced-motion:reduce){
-  *,*::before,*::after{transition:none!important;animation:none!important}
-  .avs span{transform:none;opacity:1}
-}
-</style>
+  <!-- ===== Scripts: scripts/main.js starts every component ===== -->
+  <script type="module" src="scripts/main.js"></script>
 </head>
 <body>
 
-<!-- ======================= HERO ======================= -->
-<header class="hero no-photo" id="home">
-  <canvas id="gl" aria-hidden="true"></canvas>
+  <!-- =====================================================================
+       HEADER — navbar, location/status, contact button
+       Styles: components/header/header.css, components/navbar/navbar.css
+       Script: components/navbar/navbar.js
+       ===================================================================== -->
+  <header class="site-header">
+    <nav class="navbar" aria-label="Main">
+      <span class="navbar__indicator" aria-hidden="true"></span>
+      <a class="navbar__link navbar__link--active" href="#home">Home</a>
+      <a class="navbar__link" href="#projects">Works</a>
+      <a class="navbar__link" href="#about">About</a>
+      <a class="navbar__link" href="#contact">Contact</a>
+    </nav>
 
-  <nav class="nav anim" id="nav" aria-label="Main">
-    <span class="pill" aria-hidden="true"></span>
-    <a href="#home" class="on">Home</a>
-    <a href="#works">Works</a>
-    <a href="#journey">About</a>
-    <a href="#contact">Contact</a>
-  </nav>
+    <p class="site-header__status" data-intro>
+      <span class="site-header__status-place">Lalitpur, Nepal</span>
+      Open to work · 2026
+    </p>
 
-  <div class="date anim"><b>Lalitpur, Nepal</b><br>Open to work · 2026</div>
-  <a class="btn contact anim" href="#contact" aria-label="Contact me"><span class="txt">Contact Me <span class="arrow">↗</span></span><span class="sq arrow">↗</span></a>
+    <a class="btn site-header__contact" href="#contact" aria-label="Contact me" data-intro>
+      <span class="site-header__contact-label">Contact Me <span class="btn__arrow">↗</span></span>
+      <span class="site-header__contact-icon btn__arrow" aria-hidden="true">↗</span>
+    </a>
+  </header>
 
-  <h1 class="title disp" aria-label="Bikash Karki">
-    <span class="ln"><span>Bikash</span></span>
-    <span class="ln"><span>Karki</span></span>
-  </h1>
-  <div class="yr anim">(’26)</div>
+  <main>
 
-  <div class="about anim">
-    <div class="lbl"><span class="dot"></span>(ABOUT)</div>
-    <p>Computer engineering student building web apps, data-driven campaigns and AI automations.</p>
-    <a class="btn" href="#works">View My Work <span class="arrow">↗</span></a>
-  </div>
+    <!-- ===================================================================
+         HERO
+         Styles: components/hero/hero.css, hero-stats.css, hero-featured.css
+         Scripts: components/hero/hero.js (intro), hero-scene.js (3D)
+         =================================================================== -->
+    <section class="hero" id="home">
+      <canvas class="hero__scene" aria-hidden="true"></canvas>
 
-  <div class="stats anim">
-    <div class="card-dark">
-      <div class="big"><span data-count="10" data-suffix="+">0</span></div>
-      <div class="sm">Core skills</div>
-      <div class="marks">
-        <span><i><svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="1.4" fill="#A33447"/><ellipse cx="5" cy="5" rx="4.4" ry="1.7" fill="none" stroke="#F2EFEA" stroke-width=".8"/><ellipse cx="5" cy="5" rx="4.4" ry="1.7" fill="none" stroke="#F2EFEA" stroke-width=".8" transform="rotate(60 5 5)"/><ellipse cx="5" cy="5" rx="4.4" ry="1.7" fill="none" stroke="#F2EFEA" stroke-width=".8" transform="rotate(-60 5 5)"/></svg></i>React</span>
-        <span><i><svg viewBox="0 0 10 10"><path d="M5 .5 9 2.8v4.4L5 9.5 1 7.2V2.8z" fill="none" stroke="#F2EFEA" stroke-width=".9"/></svg></i>Node</span>
-        <span><i><svg viewBox="0 0 10 10"><path d="M2 8.5 3.5 1l2 3.5L7 3l1 5.5L5 9.8z" fill="#A33447"/></svg></i>Firebase</span>
-        <span><i><svg viewBox="0 0 10 10"><rect x="1" y="1" width="8" height="8" rx="2" fill="none" stroke="#F2EFEA" stroke-width=".9"/><circle cx="5" cy="5" r="1.4" fill="#F2EFEA"/></svg></i>Python</span>
-        <span><i><svg viewBox="0 0 10 10"><circle cx="2" cy="5" r="1.5" fill="#F2EFEA"/><circle cx="8" cy="2.5" r="1.5" fill="#F2EFEA"/><circle cx="8" cy="7.5" r="1.5" fill="#A33447"/><path d="M3.3 4.5 6.7 3M3.3 5.5 6.7 7" stroke="#F2EFEA" stroke-width=".7"/></svg></i>n8n</span>
-        <span><i><svg viewBox="0 0 10 10"><path d="M1 7c1.5-5 3-5 4-2s2.5 3 4-2" fill="none" stroke="#F2EFEA" stroke-width="1"/></svg></i>Meta Ads</span>
+      <h1 class="hero__title text-display">
+        <span class="hero__title-line"><span class="hero__title-text">Bikash</span></span>
+        <span class="hero__title-line"><span class="hero__title-text">Karki</span></span>
+      </h1>
+      <span class="hero__year" data-intro>(’26)</span>
+
+      <div class="hero__intro" data-intro>
+        <p class="hero__intro-label"><span class="dot"></span>(ABOUT)</p>
+        <p class="hero__intro-text">Computer engineering student building web apps, data-driven campaigns and AI automations.</p>
+        <a class="btn hero__intro-button" href="#projects">View My Work <span class="btn__arrow">↗</span></a>
       </div>
-      <a class="bar" href="https://github.com/vikaskarki" target="_blank" rel="noopener">GitHub profile <span>↗</span></a>
-    </div>
-    <div class="card-feed">
-      <div class="ring"></div>
-      <div class="hd"><span>Work Feed</span><span>10 / 25</span></div>
-      <div class="ft"><div class="big"><span data-count="8" data-suffix="+">0</span></div><div class="sm">Projects built<br>and shipped</div></div>
-    </div>
-  </div>
 
-  <div class="growth glass anim"><span class="chk"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M3 7.3 5.8 10 11 4" fill="none" stroke="#D07A86" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Open to Work</div>
+      <!-- Hero stats: skills card + projects card -->
+      <div class="hero-stats" data-intro>
+        <div class="skills-card">
+          <span class="hero-stats__count" data-count="10" data-count-suffix="+">0</span>
+          <span class="hero-stats__caption">Core skills</span>
+          <ul class="skills-card__list">
+            <li class="skills-card__item">
+              <svg class="skills-card__icon" viewBox="0 0 10 10" aria-hidden="true"><circle cx="5" cy="5" r="1.4" fill="#A33447"/><ellipse cx="5" cy="5" rx="4.4" ry="1.7" fill="none" stroke="#F2EFEA" stroke-width=".8"/><ellipse cx="5" cy="5" rx="4.4" ry="1.7" fill="none" stroke="#F2EFEA" stroke-width=".8" transform="rotate(60 5 5)"/><ellipse cx="5" cy="5" rx="4.4" ry="1.7" fill="none" stroke="#F2EFEA" stroke-width=".8" transform="rotate(-60 5 5)"/></svg>
+              React
+            </li>
+            <li class="skills-card__item">
+              <svg class="skills-card__icon" viewBox="0 0 10 10" aria-hidden="true"><path d="M5 .5 9 2.8v4.4L5 9.5 1 7.2V2.8z" fill="none" stroke="#F2EFEA" stroke-width=".9"/></svg>
+              Node
+            </li>
+            <li class="skills-card__item">
+              <svg class="skills-card__icon" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 8.5 3.5 1l2 3.5L7 3l1 5.5L5 9.8z" fill="#A33447"/></svg>
+              Firebase
+            </li>
+            <li class="skills-card__item">
+              <svg class="skills-card__icon" viewBox="0 0 10 10" aria-hidden="true"><rect x="1" y="1" width="8" height="8" rx="2" fill="none" stroke="#F2EFEA" stroke-width=".9"/><circle cx="5" cy="5" r="1.4" fill="#F2EFEA"/></svg>
+              Python
+            </li>
+            <li class="skills-card__item">
+              <svg class="skills-card__icon" viewBox="0 0 10 10" aria-hidden="true"><circle cx="2" cy="5" r="1.5" fill="#F2EFEA"/><circle cx="8" cy="2.5" r="1.5" fill="#F2EFEA"/><circle cx="8" cy="7.5" r="1.5" fill="#A33447"/><path d="M3.3 4.5 6.7 3M3.3 5.5 6.7 7" stroke="#F2EFEA" stroke-width=".7"/></svg>
+              n8n
+            </li>
+            <li class="skills-card__item">
+              <svg class="skills-card__icon" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 7c1.5-5 3-5 4-2s2.5 3 4-2" fill="none" stroke="#F2EFEA" stroke-width="1"/></svg>
+              Meta Ads
+            </li>
+          </ul>
+          <a class="skills-card__link" href="https://github.com/vikaskarki" target="_blank" rel="noopener">GitHub profile <span>↗</span></a>
+        </div>
 
-  <div class="avail anim">Currently available<br><span class="dot"></span>for new projects</div>
-
-  <div class="out anim">
-    <div class="meta"><div><em>Featured</em><br><b>AI Order Mgmt</b></div><em>[2025]</em></div>
-    <a class="qcard" href="https://ai-order-mgmt.vercel.app" target="_blank" rel="noopener" aria-label="Open AI Order Management live demo">
-      <div class="scr">
-        <div class="mock">
-          <div class="tb"><i></i><i></i><i></i></div>
-          <div class="msg u">2 momo, 1 thukpa please</div>
-          <div class="msg b">Order #214 placed — sent to kitchen ✓</div>
-          <div class="msg u">Status?</div>
-          <div class="msg b">Preparing · ready in ~12 min</div>
+        <div class="projects-card">
+          <span class="projects-card__ring" aria-hidden="true"></span>
+          <div class="projects-card__header"><span>Work Feed</span><span>10 / 25</span></div>
+          <div class="projects-card__footer">
+            <span class="hero-stats__count" data-count="8" data-count-suffix="+">0</span>
+            <p class="hero-stats__caption">Projects built<br>and shipped</p>
+          </div>
         </div>
       </div>
-      <span class="go glass">↗</span>
-    </a>
-    <div class="prog"><i id="prog"></i></div>
-  </div>
 
-  <div class="plate anim">
-    <svg width="30" height="26" viewBox="0 0 30 26" aria-hidden="true"><path d="M1 25 11 2l6 13z" fill="#F2EFEA"/><path d="M13 25 21 8l8 17z" fill="#A33447"/></svg>
-    <span class="wm">B<b>·</b>KARKI</span>
-    <span class="menu" aria-hidden="true"><i></i><i></i></span>
-  </div>
+      <p class="hero__badge glass" data-intro>
+        <span class="hero__badge-icon" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 14 14"><path d="M3 7.3 5.8 10 11 4" fill="none" stroke="#D07A86" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        Open to Work
+      </p>
 
-  <div class="logos anim" aria-hidden="true">
-    <span><svg width="14" height="14" viewBox="0 0 14 14"><rect x="1" y="1" width="12" height="12" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M5 5 3.5 7 5 9M9 5l1.5 2L9 9" stroke="currentColor" stroke-width="1.4" fill="none"/></svg>Engineer</span>
-    <span><svg width="14" height="14" viewBox="0 0 14 14"><path d="M1 12 5 7l3 3 5-7" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>Marketer</span>
-    <span><svg width="14" height="14" viewBox="0 0 14 14"><path d="M7 1v12M1 7h12M2.8 2.8l8.4 8.4M11.2 2.8l-8.4 8.4" stroke="currentColor" stroke-width="1.5"/></svg>AI Builder</span>
-  </div>
-</header>
+      <p class="hero__availability" data-intro>Currently available<br><span class="dot"></span>for new projects</p>
 
-<!-- ======================= BAR ======================= -->
-<div class="strip wide">
-  <span>EST <em>2020</em></span>
-  <a class="mid" href="#statement"><span>Scroll down</span><span class="rnd" style="display:grid"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M7 2v10M3 8l4 4 4-4" fill="none" stroke="#1C1C1F" stroke-width="1.6"/></svg></span></a>
-  <span><em>Based in</em> Nepal</span>
-</div>
+      <!-- Featured project: mini chat preview linking to the live demo -->
+      <div class="featured-project" data-intro>
+        <div class="featured-project__meta">
+          <p>
+            <span class="featured-project__label">Featured</span>
+            <span class="featured-project__name">AI Order Mgmt</span>
+          </p>
+          <span class="featured-project__year">[2025]</span>
+        </div>
+        <a class="featured-project__card" href="https://ai-order-mgmt.vercel.app" target="_blank" rel="noopener" aria-label="Open AI Order Management live demo">
+          <div class="featured-project__screen">
+            <div class="featured-project__chat">
+              <div class="featured-project__chat-dots"><span></span><span></span><span></span></div>
+              <p class="featured-project__message featured-project__message--user">2 momo, 1 thukpa please</p>
+              <p class="featured-project__message">Order #214 placed — sent to kitchen ✓</p>
+              <p class="featured-project__message featured-project__message--user">Status?</p>
+              <p class="featured-project__message">Preparing · ready in ~12 min</p>
+            </div>
+          </div>
+          <span class="featured-project__open glass" aria-hidden="true">↗</span>
+        </a>
+        <div class="featured-project__progress"><span class="featured-project__progress-bar"></span></div>
+      </div>
 
-<!-- ======================= STATEMENT ======================= -->
-<section class="statement" id="statement">
-  <h2 id="stmt">I believe the best digital products are<br>built where <k>engineering</k> meets<br><k>marketing.</k> Every project I take on is<br>designed to solve real problems, reach<br>the right people, and drive <k>growth.</k></h2>
-  <p class="sub">Web development, digital marketing and AI automation,<br>from strategy to execution. <em>Built for growing brands.</em></p>
-</section>
+      <!-- Glass name plate over the 3D scene -->
+      <div class="hero__nameplate" data-intro>
+        <svg width="30" height="26" viewBox="0 0 30 26" aria-hidden="true"><path d="M1 25 11 2l6 13z" fill="#F2EFEA"/><path d="M13 25 21 8l8 17z" fill="#A33447"/></svg>
+        <span class="hero__nameplate-name">B<span class="hero__nameplate-dot">·</span>KARKI</span>
+        <span class="hero__nameplate-menu" aria-hidden="true"><span></span><span></span></span>
+      </div>
 
-<!-- ======================= HIGHLIGHTS ======================= -->
-<section class="trust" id="trust">
-  <div class="panel">
-    <div class="lft">
-      <h3>Bridging<br>Code, Data<br><span class="g">Campaigns</span><br>&amp; AI</h3>
-      <div class="tile t1" aria-hidden="true"><svg width="34" height="34" viewBox="0 0 34 34"><path d="M17 3v28M5 10l24 14M29 10 5 24" stroke="#F2EFEA" stroke-width="2.6" stroke-linecap="round"/></svg></div>
-      <div class="tile t2" aria-hidden="true"><svg width="30" height="30" viewBox="0 0 30 30"><circle cx="8" cy="8" r="4" fill="#A33447"/><circle cx="22" cy="8" r="4" fill="#F2EFEA"/><circle cx="8" cy="22" r="4" fill="#F2EFEA"/><circle cx="22" cy="22" r="4" fill="#F2EFEA"/></svg></div>
-      <p>I write the code, run the campaigns and read the numbers — so the product and the people who need it actually meet.</p>
+      <ul class="hero__roles" aria-label="Roles" data-intro>
+        <li class="hero__role">
+          <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="1" width="12" height="12" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M5 5 3.5 7 5 9M9 5l1.5 2L9 9" stroke="currentColor" stroke-width="1.4" fill="none"/></svg>
+          Engineer
+        </li>
+        <li class="hero__role">
+          <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M1 12 5 7l3 3 5-7" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+          Marketer
+        </li>
+        <li class="hero__role">
+          <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M7 1v12M1 7h12M2.8 2.8l8.4 8.4M11.2 2.8l-8.4 8.4" stroke="currentColor" stroke-width="1.5"/></svg>
+          AI Builder
+        </li>
+      </ul>
+    </section>
+
+    <!-- ===================================================================
+         SCROLL STRIP — dark bar under the hero
+         Styles: components/scroll-strip/scroll-strip.css
+         =================================================================== -->
+    <div class="scroll-strip text-wide">
+      <span>EST <span class="scroll-strip__muted">2020</span></span>
+      <a class="scroll-strip__cue" href="#statement">
+        <span class="scroll-strip__cue-label">Scroll down</span>
+        <span class="scroll-strip__cue-icon" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 14 14"><path d="M7 2v10M3 8l4 4 4-4" fill="none" stroke="#1C1C1F" stroke-width="1.6"/></svg>
+        </span>
+      </a>
+      <span><span class="scroll-strip__muted">Based in</span> Nepal</span>
     </div>
 
-    <div class="tc av">
-      <div class="avs" id="avs">
-        <span>Re</span><span class="b">Py</span><span>Nd</span><span>Fb</span>
-        <span class="b">n8n</span><span>Mg</span><span>Ads</span><span class="b">AI</span>
+    <!-- ===================================================================
+         STATEMENT — words fill grey → ivory on scroll
+         Styles: components/statement/statement.css
+         Script: components/statement/statement.js
+         Tip: wrap a word in <strong> to give it the wide display font.
+         =================================================================== -->
+    <section class="statement" id="statement">
+      <h2 class="statement__text">I believe the best digital products are<br>built where <strong>engineering</strong> meets<br><strong>marketing.</strong> Every project I take on is<br>designed to solve real problems, reach<br>the right people, and drive <strong>growth.</strong></h2>
+      <p class="statement__subtext">
+        Web development, digital marketing and AI automation,<br>from strategy to execution.
+        <span class="statement__subtext-muted">Built for growing brands.</span>
+      </p>
+    </section>
+
+    <!-- ===================================================================
+         HIGHLIGHTS — bordered panel with three cards
+         Styles: components/highlights/highlights.css
+         Script: components/highlights/highlights.js
+         =================================================================== -->
+    <section class="highlights" id="highlights">
+      <div class="highlights__panel">
+
+        <div class="highlights__intro">
+          <h2 class="highlights__heading">Bridging<br>Code, Data<br><span class="highlights__heading-muted">Campaigns</span><br>&amp; AI</h2>
+          <span class="highlights__tile highlights__tile--asterisk" aria-hidden="true">
+            <svg width="34" height="34" viewBox="0 0 34 34"><path d="M17 3v28M5 10l24 14M29 10 5 24" stroke="#F2EFEA" stroke-width="2.6" stroke-linecap="round"/></svg>
+          </span>
+          <span class="highlights__tile highlights__tile--dots" aria-hidden="true">
+            <svg width="30" height="30" viewBox="0 0 30 30"><circle cx="8" cy="8" r="4" fill="#A33447"/><circle cx="22" cy="8" r="4" fill="#F2EFEA"/><circle cx="8" cy="22" r="4" fill="#F2EFEA"/><circle cx="22" cy="22" r="4" fill="#F2EFEA"/></svg>
+          </span>
+          <p class="highlights__text">I write the code, run the campaigns and read the numbers — so the product and the people who need it actually meet.</p>
+        </div>
+
+        <!-- Card 1: skills -->
+        <article class="highlight-card highlight-card--skills">
+          <ul class="skill-chips" aria-label="Skills">
+            <li class="skill-chips__chip" title="React">Re</li>
+            <li class="skill-chips__chip skill-chips__chip--accent" title="Python">Py</li>
+            <li class="skill-chips__chip" title="Node.js">Nd</li>
+            <li class="skill-chips__chip" title="Firebase">Fb</li>
+            <li class="skill-chips__chip skill-chips__chip--accent" title="n8n">n8n</li>
+            <li class="skill-chips__chip" title="MongoDB">Mg</li>
+            <li class="skill-chips__chip" title="Meta &amp; Google Ads">Ads</li>
+            <li class="skill-chips__chip skill-chips__chip--accent" title="AI">AI</li>
+          </ul>
+          <span class="highlight-card__count" data-count="10">0</span>
+          <p class="highlight-card__caption">Public GitHub repositories</p>
+        </article>
+
+        <!-- Card 2: experience -->
+        <article class="highlight-card highlight-card--experience">
+          <span class="highlight-card__count" data-count="1" data-count-suffix="+ yr">0</span>
+          <p class="highlight-card__caption">Meta Ads &amp; lead generation</p>
+          <div class="highlight-card__badge">
+            <svg width="150" height="118" viewBox="0 0 150 118" role="img" aria-label="Open to opportunities 2026">
+              <g fill="none" stroke="#D07A86" stroke-width="1.6" stroke-linecap="round">
+                <path d="M44 100C24 88 16 64 22 38"/><path d="M106 100c20-12 28-36 22-62"/>
+              </g>
+              <g fill="#D07A86">
+                <ellipse cx="22" cy="44" rx="4" ry="9" transform="rotate(-18 22 44)"/><ellipse cx="20" cy="60" rx="4" ry="9" transform="rotate(-40 20 60)"/><ellipse cx="25" cy="76" rx="4" ry="9" transform="rotate(-60 25 76)"/><ellipse cx="35" cy="90" rx="4" ry="9" transform="rotate(-78 35 90)"/>
+                <ellipse cx="128" cy="44" rx="4" ry="9" transform="rotate(18 128 44)"/><ellipse cx="130" cy="60" rx="4" ry="9" transform="rotate(40 130 60)"/><ellipse cx="125" cy="76" rx="4" ry="9" transform="rotate(60 125 76)"/><ellipse cx="115" cy="90" rx="4" ry="9" transform="rotate(78 115 90)"/>
+              </g>
+              <text x="75" y="50" text-anchor="middle" fill="#F2EFEA" font-family="Archivo" font-stretch="125%" font-size="10" font-weight="700" letter-spacing="1">OPEN TO</text>
+              <text x="75" y="66" text-anchor="middle" fill="#F2EFEA" font-family="Archivo" font-stretch="125%" font-size="8" font-weight="700" letter-spacing=".4">OPPORTUNITIES</text>
+              <text x="75" y="86" text-anchor="middle" fill="#D07A86" font-family="Inter Tight" font-size="12" font-weight="600">2026</text>
+            </svg>
+          </div>
+          <p class="highlight-card__note">Driving leads for an Australian finance<br>brokerage since October 2025.</p>
+        </article>
+
+        <!-- Card 3: location -->
+        <article class="highlight-card highlight-card--location">
+          <div class="location-rings" aria-hidden="true"><span></span><span></span><span></span></div>
+          <div class="highlight-card__shade"></div>
+          <p class="highlight-card__place"><span class="highlight-card__place-label">Based in</span>Lalitpur,<br>Nepal</p>
+        </article>
+
       </div>
-      <div class="num"><span data-count="10" data-later>0</span></div>
-      <div class="cap">Public GitHub repositories</div>
+    </section>
+
+    <!-- ===================================================================
+         PROJECTS ("Works")
+         Styles: components/section-heading/section-heading.css,
+                 components/projects/projects.css
+         Script: components/projects/projects.js (3D tilt)
+         Add a project: copy an <article class="project-card"> or an
+         <a class="project-mini"> block and edit it.
+         =================================================================== -->
+    <section class="projects" id="projects">
+      <div class="section-heading">
+        <h2 class="section-heading__title text-display">Works<sup class="section-heading__tag">(08)</sup></h2>
+        <p class="section-heading__aside">Selected projects<br>2024 — 2025</p>
+      </div>
+
+      <div class="project-grid">
+
+        <!-- Project 01 -->
+        <article class="project-card" data-tilt>
+          <div class="project-card__glow"></div>
+          <span class="project-card__number text-display" aria-hidden="true">01</span>
+          <div class="project-card__top">
+            <span class="project-card__type">AI · Automation · Self project</span>
+            <a class="project-card__open" href="https://ai-order-mgmt.vercel.app" target="_blank" rel="noopener" aria-label="Open AI Order Management live demo">↗</a>
+          </div>
+          <div class="project-card__body">
+            <h3 class="project-card__title">AI Order Management System</h3>
+            <p class="project-card__description">Real-time food ordering powered by n8n automation and Firebase — chatbot flows for placing orders, status updates and admin-to-kitchen coordination.</p>
+            <ul class="project-card__tags">
+              <li class="project-card__tag">React</li><li class="project-card__tag">Vite</li><li class="project-card__tag">n8n</li><li class="project-card__tag">Firebase</li><li class="project-card__tag">Chatbot</li>
+            </ul>
+            <div class="project-card__links">
+              <a class="project-card__link" href="https://ai-order-mgmt.vercel.app" target="_blank" rel="noopener">Live demo ↗</a>
+              <a class="project-card__link" href="https://github.com/vikaskarki/AI-Order-Mgmt" target="_blank" rel="noopener">Source ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 02 -->
+        <article class="project-card" data-tilt>
+          <div class="project-card__glow"></div>
+          <span class="project-card__number text-display" aria-hidden="true">02</span>
+          <div class="project-card__top">
+            <span class="project-card__type">Web app · College project</span>
+            <a class="project-card__open" href="https://github.com/vikaskarki/Routine-Generator" target="_blank" rel="noopener" aria-label="Open Exam Routine Generator source code">↗</a>
+          </div>
+          <div class="project-card__body">
+            <h3 class="project-card__title">Exam Routine Generator</h3>
+            <p class="project-card__description">An automated scheduler that builds semester exam timetables — upload subjects, assign slots and export the final routine, with fewer manual errors.</p>
+            <ul class="project-card__tags">
+              <li class="project-card__tag">React</li><li class="project-card__tag">Vite</li><li class="project-card__tag">JavaScript</li><li class="project-card__tag">Database</li>
+            </ul>
+            <div class="project-card__links">
+              <a class="project-card__link" href="https://github.com/vikaskarki/Routine-Generator" target="_blank" rel="noopener">Source ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 03 -->
+        <article class="project-card" data-tilt>
+          <div class="project-card__glow"></div>
+          <span class="project-card__number text-display" aria-hidden="true">03</span>
+          <div class="project-card__top">
+            <span class="project-card__type">Platform · Sports</span>
+            <a class="project-card__open" href="https://github.com/vikaskarki/HamroFutsal" target="_blank" rel="noopener" aria-label="Open HamroFutsal source code">↗</a>
+          </div>
+          <div class="project-card__body">
+            <h3 class="project-card__title">HamroFutsal</h3>
+            <p class="project-card__description">A platform for futsal players and sports lovers to find the nearest futsal grounds around them.</p>
+            <ul class="project-card__tags">
+              <li class="project-card__tag">Web platform</li><li class="project-card__tag">Location</li><li class="project-card__tag">Booking</li>
+            </ul>
+            <div class="project-card__links">
+              <a class="project-card__link" href="https://github.com/vikaskarki/HamroFutsal" target="_blank" rel="noopener">Source ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 04 -->
+        <article class="project-card" data-tilt>
+          <div class="project-card__glow"></div>
+          <span class="project-card__number text-display" aria-hidden="true">04</span>
+          <div class="project-card__top">
+            <span class="project-card__type">Website · Travel</span>
+            <a class="project-card__open" href="https://github.com/vikaskarki/Splendid_Nepal" target="_blank" rel="noopener" aria-label="Open Splendid Nepal source code">↗</a>
+          </div>
+          <div class="project-card__body">
+            <h3 class="project-card__title">Splendid Nepal</h3>
+            <p class="project-card__description">The front end of a travel and tourism website showcasing destinations across Nepal.</p>
+            <ul class="project-card__tags">
+              <li class="project-card__tag">HTML</li><li class="project-card__tag">CSS</li><li class="project-card__tag">Responsive</li>
+            </ul>
+            <div class="project-card__links">
+              <a class="project-card__link" href="https://github.com/vikaskarki/Splendid_Nepal" target="_blank" rel="noopener">Source ↗</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Smaller projects -->
+      <div class="project-list">
+        <a class="project-mini" href="https://github.com/vikaskarki/samacharapp" target="_blank" rel="noopener">
+          <span class="project-mini__meta"><span>05 · React</span><span>↗</span></span>
+          <h3 class="project-mini__title">Samachar App</h3>
+          <p class="project-mini__description">A news reader app built with React.</p>
+        </a>
+        <a class="project-mini" href="https://github.com/vikaskarki/TextTools" target="_blank" rel="noopener">
+          <span class="project-mini__meta"><span>06 · React</span><span>↗</span></span>
+          <h3 class="project-mini__title">TextTools</h3>
+          <p class="project-mini__description">Handy text utilities in the browser.</p>
+        </a>
+        <a class="project-mini" href="https://github.com/vikaskarki/TicTacToe-" target="_blank" rel="noopener">
+          <span class="project-mini__meta"><span>07 · React</span><span>↗</span></span>
+          <h3 class="project-mini__title">Tic-Tac-Toe</h3>
+          <p class="project-mini__description">The classic game, built with React basics.</p>
+        </a>
+        <a class="project-mini" href="https://github.com/vikaskarki/CodingSamuraiTasks" target="_blank" rel="noopener">
+          <span class="project-mini__meta"><span>08 · Python</span><span>↗</span></span>
+          <h3 class="project-mini__title">AI Internship Tasks</h3>
+          <p class="project-mini__description">Python tasks from the Coding Samurai AI internship.</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         ABOUT — experience, education, toolkit
+         Styles: components/section-heading/section-heading.css,
+                 components/about/about.css
+         =================================================================== -->
+    <section class="about" id="about">
+      <div class="section-heading">
+        <h2 class="section-heading__title text-display">About<sup class="section-heading__tag">(ME)</sup></h2>
+        <p class="section-heading__aside">Experience, education<br>and toolkit</p>
+      </div>
+
+      <div class="about__columns">
+
+        <!-- Experience -->
+        <div class="about__column">
+          <h3 class="about__column-title"><span class="dot"></span>Experience</h3>
+          <article class="timeline-item">
+            <p class="timeline-item__date">Oct 2025 — Present</p>
+            <h4 class="timeline-item__title">Digital Marketing Specialist</h4>
+            <p class="timeline-item__place">Outsourcing Mate</p>
+            <ul class="timeline-item__points">
+              <li class="timeline-item__point">Run and optimise Meta Ads for an Australian finance brokerage — lead generation, audience targeting and cost efficiency.</li>
+              <li class="timeline-item__point">Plan social strategy and produce creatives, copy and campaigns.</li>
+              <li class="timeline-item__point">Track analytics and turn the data into performance reports and next steps.</li>
+            </ul>
+          </article>
+        </div>
+
+        <!-- Education -->
+        <div class="about__column">
+          <h3 class="about__column-title"><span class="dot"></span>Education</h3>
+          <article class="timeline-item">
+            <p class="timeline-item__date">2020 — 2024 · In progress</p>
+            <h4 class="timeline-item__title">Bachelor’s, Computer Engineering</h4>
+            <p class="timeline-item__place">Everest Engineering College</p>
+          </article>
+          <article class="timeline-item">
+            <p class="timeline-item__date">2018 — 2020</p>
+            <h4 class="timeline-item__title">+2 Science</h4>
+            <p class="timeline-item__place">Bluebird Secondary College</p>
+          </article>
+          <article class="timeline-item">
+            <p class="timeline-item__date">Until 2018</p>
+            <h4 class="timeline-item__title">School</h4>
+            <p class="timeline-item__place">Nagarjuna Academy</p>
+          </article>
+        </div>
+
+        <!-- Toolkit -->
+        <div class="about__column">
+          <h3 class="about__column-title"><span class="dot"></span>Toolkit</h3>
+          <ul class="skill-group">
+            <li class="skill-group__title">Programming</li>
+            <li class="skill-group__chip">Python</li><li class="skill-group__chip">MERN Stack</li><li class="skill-group__chip">React</li><li class="skill-group__chip">HTML / CSS</li><li class="skill-group__chip">Firebase</li><li class="skill-group__chip">Git &amp; GitHub</li>
+          </ul>
+          <ul class="skill-group">
+            <li class="skill-group__title">AI &amp; Automation</li>
+            <li class="skill-group__chip">Prompt engineering</li><li class="skill-group__chip">Chatbots</li><li class="skill-group__chip">n8n</li><li class="skill-group__chip">Recommendation engines</li><li class="skill-group__chip">Sentiment analysis</li>
+          </ul>
+          <ul class="skill-group">
+            <li class="skill-group__title">Marketing</li>
+            <li class="skill-group__chip">Meta Ads</li><li class="skill-group__chip">Google Ads</li><li class="skill-group__chip">Lead generation</li><li class="skill-group__chip">Analytics &amp; reporting</li><li class="skill-group__chip">Content strategy</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         CONTACT
+         Styles: components/contact/contact.css
+         =================================================================== -->
+    <section class="contact" id="contact">
+      <p class="contact__label"><span class="dot"></span>(CONTACT)</p>
+      <h2 class="contact__heading text-display">Let’s build<br><span class="contact__heading-accent">something.</span></h2>
+      <div class="contact__row">
+        <p class="contact__text">Open to roles and projects in web development, digital marketing and AI automation. Say hello — I usually reply within a day.</p>
+        <div class="contact__actions">
+          <a class="btn" href="mailto:bikashkarki874@gmail.com">Say hello <span class="btn__arrow">↗</span></a>
+          <a class="btn btn--outline" href="https://www.linkedin.com/in/bikashkarki" target="_blank" rel="noopener">LinkedIn <span class="btn__arrow">↗</span></a>
+          <a class="btn btn--outline" href="https://github.com/vikaskarki" target="_blank" rel="noopener">GitHub <span class="btn__arrow">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =====================================================================
+       FOOTER
+       Styles: components/footer/footer.css
+       ===================================================================== -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <span>© 2026 Bikash Karki</span>
+      <span>Lalitpur, Nepal</span>
+      <a class="site-footer__link" href="#home">Back to top ↑</a>
     </div>
+  </footer>
 
-    <div class="tc aw" id="awards">
-      <div class="num"><span data-count="1" data-suffix="+ yr" data-later>0</span></div>
-      <div class="cap">Meta Ads &amp; lead generation</div>
-      <div class="badge">
-        <svg width="150" height="118" viewBox="0 0 150 118" aria-label="Open to opportunities 2026">
-          <g fill="none" stroke="#D07A86" stroke-width="1.6" stroke-linecap="round">
-            <path d="M44 100C24 88 16 64 22 38"/><path d="M106 100c20-12 28-36 22-62"/>
-          </g>
-          <g fill="#D07A86">
-            <ellipse cx="22" cy="44" rx="4" ry="9" transform="rotate(-18 22 44)"/><ellipse cx="20" cy="60" rx="4" ry="9" transform="rotate(-40 20 60)"/><ellipse cx="25" cy="76" rx="4" ry="9" transform="rotate(-60 25 76)"/><ellipse cx="35" cy="90" rx="4" ry="9" transform="rotate(-78 35 90)"/>
-            <ellipse cx="128" cy="44" rx="4" ry="9" transform="rotate(18 128 44)"/><ellipse cx="130" cy="60" rx="4" ry="9" transform="rotate(40 130 60)"/><ellipse cx="125" cy="76" rx="4" ry="9" transform="rotate(60 125 76)"/><ellipse cx="115" cy="90" rx="4" ry="9" transform="rotate(78 115 90)"/>
-          </g>
-          <text x="75" y="50" text-anchor="middle" fill="#F2EFEA" font-family="Archivo" font-stretch="125%" font-size="10" font-weight="700" letter-spacing="1">OPEN TO</text>
-          <text x="75" y="66" text-anchor="middle" fill="#F2EFEA" font-family="Archivo" font-stretch="125%" font-size="8" font-weight="700" letter-spacing=".4">OPPORTUNITIES</text>
-          <text x="75" y="86" text-anchor="middle" fill="#D07A86" font-family="Inter Tight" font-size="12" font-weight="600">2026</text>
-        </svg>
-      </div>
-      <div class="note">Driving leads for an Australian finance<br>brokerage since October 2025.</div>
-    </div>
-
-    <div class="tc pt">
-      <div class="rg" aria-hidden="true"><i></i><i></i><i></i></div>
-      <div class="ov"></div>
-      <div class="lb"><span>Based in</span>Lalitpur,<br>Nepal</div>
-    </div>
-  </div>
-</section>
-
-<!-- ======================= WORKS ======================= -->
-<section class="works" id="works">
-  <div class="sec-hd">
-    <h2 class="disp">Works<sup>(08)</sup></h2>
-    <div class="r">Selected projects<br>2024 — 2025</div>
-  </div>
-
-  <div class="grid">
-    <article class="wk tilt">
-      <div class="glow"></div><div class="n disp">01</div>
-      <div class="top"><span class="kind">AI · Automation · Self project</span><a class="go" href="https://ai-order-mgmt.vercel.app" target="_blank" rel="noopener" aria-label="Open live demo">↗</a></div>
-      <div class="bot">
-        <h4>AI Order Management System</h4>
-        <p>Real-time food ordering powered by n8n automation and Firebase — chatbot flows for placing orders, status updates and admin-to-kitchen coordination.</p>
-        <div class="tags"><span>React</span><span>Vite</span><span>n8n</span><span>Firebase</span><span>Chatbot</span></div>
-        <div class="links"><a href="https://ai-order-mgmt.vercel.app" target="_blank" rel="noopener">Live demo ↗</a><a href="https://github.com/vikaskarki/AI-Order-Mgmt" target="_blank" rel="noopener">Source ↗</a></div>
-      </div>
-    </article>
-    <article class="wk tilt">
-      <div class="glow"></div><div class="n disp">02</div>
-      <div class="top"><span class="kind">Web app · College project</span><a class="go" href="https://github.com/vikaskarki/Routine-Generator" target="_blank" rel="noopener" aria-label="Open source code">↗</a></div>
-      <div class="bot">
-        <h4>Exam Routine Generator</h4>
-        <p>An automated scheduler that builds semester exam timetables — upload subjects, assign slots and export the final routine, with fewer manual errors.</p>
-        <div class="tags"><span>React</span><span>Vite</span><span>JavaScript</span><span>Database</span></div>
-        <div class="links"><a href="https://github.com/vikaskarki/Routine-Generator" target="_blank" rel="noopener">Source ↗</a></div>
-      </div>
-    </article>
-    <article class="wk tilt">
-      <div class="glow"></div><div class="n disp">03</div>
-      <div class="top"><span class="kind">Platform · Sports</span><a class="go" href="https://github.com/vikaskarki/HamroFutsal" target="_blank" rel="noopener" aria-label="Open source code">↗</a></div>
-      <div class="bot">
-        <h4>HamroFutsal</h4>
-        <p>A platform for futsal players and sports lovers to find the nearest futsal grounds around them.</p>
-        <div class="tags"><span>Web platform</span><span>Location</span><span>Booking</span></div>
-        <div class="links"><a href="https://github.com/vikaskarki/HamroFutsal" target="_blank" rel="noopener">Source ↗</a></div>
-      </div>
-    </article>
-    <article class="wk tilt">
-      <div class="glow"></div><div class="n disp">04</div>
-      <div class="top"><span class="kind">Website · Travel</span><a class="go" href="https://github.com/vikaskarki/Splendid_Nepal" target="_blank" rel="noopener" aria-label="Open source code">↗</a></div>
-      <div class="bot">
-        <h4>Splendid Nepal</h4>
-        <p>The front end of a travel and tourism website showcasing destinations across Nepal.</p>
-        <div class="tags"><span>HTML</span><span>CSS</span><span>Responsive</span></div>
-        <div class="links"><a href="https://github.com/vikaskarki/Splendid_Nepal" target="_blank" rel="noopener">Source ↗</a></div>
-      </div>
-    </article>
-  </div>
-
-  <div class="mini">
-    <a href="https://github.com/vikaskarki/samacharapp" target="_blank" rel="noopener"><span class="k"><span>05 · React</span><span>↗</span></span><h5>Samachar App</h5><p>A news reader app built with React.</p></a>
-    <a href="https://github.com/vikaskarki/TextTools" target="_blank" rel="noopener"><span class="k"><span>06 · React</span><span>↗</span></span><h5>TextTools</h5><p>Handy text utilities in the browser.</p></a>
-    <a href="https://github.com/vikaskarki/TicTacToe-" target="_blank" rel="noopener"><span class="k"><span>07 · React</span><span>↗</span></span><h5>Tic-Tac-Toe</h5><p>The classic game, built with React basics.</p></a>
-    <a href="https://github.com/vikaskarki/CodingSamuraiTasks" target="_blank" rel="noopener"><span class="k"><span>08 · Python</span><span>↗</span></span><h5>AI Internship Tasks</h5><p>Python tasks from the Coding Samurai AI internship.</p></a>
-  </div>
-</section>
-
-<!-- ======================= JOURNEY ======================= -->
-<section class="journey" id="journey">
-  <div class="sec-hd">
-    <h2 class="disp">About<sup>(ME)</sup></h2>
-    <div class="r">Experience, education<br>and toolkit</div>
-  </div>
-  <div class="cols">
-    <div class="col">
-      <h6><span class="dot"></span>Experience</h6>
-      <div class="it">
-        <div class="when">Oct 2025 — Present</div>
-        <h5>Digital Marketing Specialist</h5>
-        <div class="at">Outsourcing Mate</div>
-        <ul>
-          <li>Run and optimise Meta Ads for an Australian finance brokerage — lead generation, audience targeting and cost efficiency.</li>
-          <li>Plan social strategy and produce creatives, copy and campaigns.</li>
-          <li>Track analytics and turn the data into performance reports and next steps.</li>
-        </ul>
-      </div>
-    </div>
-    <div class="col">
-      <h6><span class="dot"></span>Education</h6>
-      <div class="it">
-        <div class="when">2020 — 2024 · In progress</div>
-        <h5>Bachelor’s, Computer Engineering</h5>
-        <div class="at">Everest Engineering College</div>
-      </div>
-      <div class="it">
-        <div class="when">2018 — 2020</div>
-        <h5>+2 Science</h5>
-        <div class="at">Bluebird Secondary College</div>
-      </div>
-      <div class="it">
-        <div class="when">Until 2018</div>
-        <h5>School</h5>
-        <div class="at">Nagarjuna Academy</div>
-      </div>
-    </div>
-    <div class="col">
-      <h6><span class="dot"></span>Toolkit</h6>
-      <div class="sk"><span class="t">Programming</span><span>Python</span><span>MERN Stack</span><span>React</span><span>HTML / CSS</span><span>Firebase</span><span>Git &amp; GitHub</span></div>
-      <div class="sk"><span class="t">AI &amp; Automation</span><span>Prompt engineering</span><span>Chatbots</span><span>n8n</span><span>Recommendation engines</span><span>Sentiment analysis</span></div>
-      <div class="sk"><span class="t">Marketing</span><span>Meta Ads</span><span>Google Ads</span><span>Lead generation</span><span>Analytics &amp; reporting</span><span>Content strategy</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- ======================= CONTACT ======================= -->
-<section class="cta" id="contact">
-  <div class="lbl"><span class="dot"></span>(CONTACT)</div>
-  <h2 class="disp">Let’s build<br><span class="g">something.</span></h2>
-  <div class="row">
-    <p>Open to roles and projects in web development, digital marketing and AI automation. Say hello — I usually reply within a day.</p>
-    <div class="btns">
-      <a class="btn" href="mailto:bikashkarki874@gmail.com">Say hello <span class="arrow">↗</span></a>
-      <a class="btn ghost" href="https://www.linkedin.com/in/bikashkarki" target="_blank" rel="noopener">LinkedIn <span class="arrow">↗</span></a>
-      <a class="btn ghost" href="https://github.com/vikaskarki" target="_blank" rel="noopener">GitHub <span class="arrow">↗</span></a>
-    </div>
-  </div>
-  <div class="foot">
-    <span>© 2026 Bikash Karki</span>
-    <span>Lalitpur, Nepal</span>
-    <a href="#home">Back to top ↑</a>
-  </div>
-</section>
-
-<script>
-(() => {
-  const rec = new URLSearchParams(location.search).has('rec');
-  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const $ = (s, r = document) => r.querySelector(s);
-  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
-  const ease = 'cubic-bezier(.2,.8,.2,1)';
-
-  /* ---------- statement: wrap words ---------- */
-  const stmt = $('#stmt');
-  const parts = stmt.innerHTML.split(/(<br>|<k>.*?<\/k>|\s+)/).filter(Boolean);
-  stmt.innerHTML = parts.map(p => {
-    if (p === '<br>') return p;
-    if (/^\s+$/.test(p)) return ' ';
-    const k = p.match(/^<k>(.*)<\/k>$/);
-    return k ? `<span class="w k">${k[1]}</span>` : `<span class="w">${p}</span>`;
-  }).join('');
-  const words = $$('.w', stmt);
-  const A = [0x5A, 0x5A, 0x5F], B = [0xF2, 0xEF, 0xEA];
-  function fill(p) {
-    const pos = p * (words.length + 3);
-    words.forEach((w, i) => {
-      const t = Math.max(0, Math.min(1, (pos - i) / 3));
-      w.style.color = `rgb(${A.map((a, j) => Math.round(a + (B[j] - a) * t)).join(',')})`;
-    });
-  }
-
-  /* ---------- counters ---------- */
-  function count(el, dur = 1400) {
-    const to = +el.dataset.count, suf = el.dataset.suffix || '';
-    if (reduce) { el.textContent = to + suf; return; }
-    const t0 = performance.now();
-    (function step(t) {
-      const k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 3);
-      el.textContent = Math.round(to * e) + suf;
-      if (k < 1) requestAnimationFrame(step);
-    })(t0);
-  }
-  let trustDone = false;
-  function trustIn() {
-    if (trustDone) return; trustDone = true;
-    $$('[data-later]').forEach(el => count(el));
-    $$('#avs span').forEach((s, i) => {
-      if (reduce) return;
-      s.animate([{ transform: 'scale(.4)', opacity: 0 }, { transform: 'scale(1)', opacity: 1 }],
-        { duration: 600, delay: i * 70, easing: 'cubic-bezier(.3,1.5,.5,1)', fill: 'forwards' });
-    });
-  }
-
-  /* ---------- nav pill ---------- */
-  const nav = $('#nav'), pill = $('.pill', nav), links = $$('a', nav);
-  let active = links[0];
-  function moveTo(a) {
-    pill.style.width = a.offsetWidth + 'px';
-    pill.style.transform = `translateX(${a.offsetLeft}px)`;
-    links.forEach(l => l.classList.toggle('on', l === a));
-  }
-  links.forEach(a => {
-    a.addEventListener('mouseenter', () => moveTo(a));
-    a.addEventListener('click', () => { active = a; moveTo(a); });
-  });
-  nav.addEventListener('mouseleave', () => moveTo(active));
-  addEventListener('resize', () => moveTo(active));
-  document.fonts.ready.then(() => moveTo(active));
-  moveTo(active);
-  const secs = ['home', 'works', 'journey', 'contact'].map(id => document.getElementById(id));
-  const ioNav = new IntersectionObserver(es => es.forEach(e => {
-    if (e.isIntersecting) { active = links[secs.indexOf(e.target)]; if (!nav.matches(':hover')) moveTo(active); }
-  }), { rootMargin: '-45% 0px -45% 0px' });
-  secs.forEach(s => ioNav.observe(s));
-
-  /* ---------- load animation ---------- */
-  function intro() {
-    if (reduce) { $$('[data-count]:not([data-later])').forEach(el => count(el)); return; }
-    $$('.title .ln span').forEach((s, i) => s.animate([{ transform: 'translateY(105%)' }, { transform: 'none' }],
-      { duration: 1000, delay: 150 + i * 110, easing: ease, fill: 'backwards' }));
-    $('#gl').animate([{ opacity: 0, scale: '.92' }, { opacity: 1, scale: '1' }], { duration: 1600, easing: ease, fill: 'backwards' });
-    nav.animate([{ translate: '0 -24px', opacity: 0 }, { translate: '0 0', opacity: 1 }], { duration: 800, delay: 100, easing: ease, fill: 'backwards' });
-    $$('.hero .anim:not(.nav)').forEach((el, i) => el.animate([{ translate: '0 14px', opacity: 0 }, { translate: '0 0', opacity: 1 }],
-      { duration: 900, delay: 300 + i * 55, easing: ease, fill: 'backwards' }));
-    $('#prog').animate([{ transform: 'scaleX(0)' }, { transform: 'scaleX(1)' }], { duration: 1400, delay: 900, easing: ease, fill: 'backwards' });
-    setTimeout(() => $$('[data-count]:not([data-later])').forEach(el => count(el)), 600);
-  }
-  intro();
-
-  /* ---------- scroll ---------- */
-  const sec = $('#statement'), trust = $('#trust');
-  function onScroll() {
-    const vh = innerHeight;
-    if (!rec) {
-      const r = sec.getBoundingClientRect();
-      fill(reduce ? 1 : Math.max(0, Math.min(1, (vh * 0.85 - r.top) / (r.height * 0.75))));
-      if (trust.getBoundingClientRect().top < vh * 0.8) trustIn();
-    }
-  }
-  addEventListener('scroll', onScroll, { passive: true });
-  addEventListener('resize', onScroll);
-  onScroll();
-
-  /* ---------- recorder mode ---------- */
-  if (rec) {
-    const t0 = performance.now();
-    (function tick(t) {
-      const s = (t - t0) / 1000;
-      fill(Math.max(0, Math.min(1, (s - 1.3) / 2.9)));
-      if (s >= 3.5) trustIn();
-      if (s >= 5.3) $('#awards').classList.add('lift');
-      if (s < 8) requestAnimationFrame(tick);
-    })(t0);
-  }
-
-  /* ---------- 3D tilt cards ---------- */
-  if (!reduce && matchMedia('(hover:hover)').matches) {
-    $$('.tilt').forEach(c => {
-      c.addEventListener('mousemove', e => {
-        const r = c.getBoundingClientRect(), x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
-        c.style.transform = `rotateY(${(x - .5) * 10}deg) rotateX(${(.5 - y) * 10}deg) translateZ(0)`;
-        c.style.setProperty('--mx', x * 100 + '%'); c.style.setProperty('--my', y * 100 + '%');
-      });
-      c.addEventListener('mouseleave', () => { c.style.transform = ''; });
-    });
-  }
-})();
-</script>
-
-<script type="module">
-import * as THREE from 'three';
-import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
-
-const canvas = document.getElementById('gl');
-const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-let renderer;
-try { renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true }); }
-catch (e) { canvas.remove(); throw e; }
-renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
-renderer.toneMapping = THREE.ACESFilmicToneMapping;
-renderer.outputColorSpace = THREE.SRGBColorSpace;
-
-const scene = new THREE.Scene();
-const pmrem = new THREE.PMREMGenerator(renderer);
-scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
-
-const camera = new THREE.PerspectiveCamera(32, 1, 0.1, 100);
-camera.position.set(0, 0, 10);
-
-const brass = new THREE.MeshStandardMaterial({ color: 0x4A4A50, metalness: 1, roughness: 0.3 });
-const brassDim = new THREE.MeshStandardMaterial({ color: 0x8A2234, metalness: 0.9, roughness: 0.32 });
-const navy = new THREE.MeshPhysicalMaterial({ color: 0x6E1E2B, metalness: 0.3, roughness: 0.18, clearcoat: 1, clearcoatRoughness: 0.08 });
-
-const rig = new THREE.Group(); scene.add(rig);
-
-// gyroscope rings
-const rings = [
-  [2.7, 0.032, brass, [1.2, 0.2, 0]],
-  [2.25, 0.05, brassDim, [0.3, 1.1, 0.4]],
-  [1.8, 0.028, brass, [-0.6, 0.5, 1.2]],
-].map(([R, t, m, rot]) => {
-  const mesh = new THREE.Mesh(new THREE.TorusGeometry(R, t, 32, 240), m);
-  mesh.rotation.set(...rot); rig.add(mesh); return mesh;
-});
-
-// faceted navy core with brass edges
-const coreGeo = new THREE.IcosahedronGeometry(0.95, 1);
-const core = new THREE.Mesh(coreGeo, navy); rig.add(core);
-const edges = new THREE.LineSegments(new THREE.EdgesGeometry(coreGeo), new THREE.LineBasicMaterial({ color: 0xE8C9CE, transparent: true, opacity: 0.35 }));
-core.add(edges);
-
-// orbiting beads
-const beads = [0, 1, 2].map(i => {
-  const b = new THREE.Mesh(new THREE.SphereGeometry(i === 1 ? 0.11 : 0.08, 24, 24), i === 1 ? navy : brass);
-  rings[i].add(b); return b;
-});
-
-// dust
-const N = 260, pos = new Float32Array(N * 3);
-for (let i = 0; i < N; i++) {
-  const r = 3.2 + Math.random() * 1.6, th = Math.random() * Math.PI * 2, ph = Math.acos(2 * Math.random() - 1);
-  pos.set([r * Math.sin(ph) * Math.cos(th), r * Math.sin(ph) * Math.sin(th), r * Math.cos(ph)], i * 3);
-}
-const dustGeo = new THREE.BufferGeometry(); dustGeo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
-const dust = new THREE.Points(dustGeo, new THREE.PointsMaterial({ color: 0x6E1E2B, size: 0.035, transparent: true, opacity: 0.55 }));
-scene.add(dust);
-
-const key = new THREE.DirectionalLight(0xFFF1E6, 2.2); key.position.set(4, 5, 6); scene.add(key);
-scene.add(new THREE.AmbientLight(0xF2EFEA, 0.3));
-
-function size() {
-  const w = canvas.clientWidth, h = canvas.clientHeight;
-  if (!w || !h) return;
-  renderer.setSize(w, h, false);
-  camera.aspect = w / h; camera.updateProjectionMatrix();
-}
-new ResizeObserver(size).observe(canvas); size();
-
-const target = { x: 0, y: 0 }, cur = { x: 0, y: 0 };
-addEventListener('pointermove', e => {
-  target.x = (e.clientX / innerWidth - 0.5) * 0.8;
-  target.y = (e.clientY / innerHeight - 0.5) * 0.6;
-});
-
-let visible = true;
-new IntersectionObserver(([e]) => { visible = e.isIntersecting; }).observe(canvas);
-
-const clock = new THREE.Clock();
-function frame() {
-  requestAnimationFrame(frame);
-  if (!visible) return;
-  const t = reduce ? 0 : clock.getElapsedTime();
-  cur.x += (target.x - cur.x) * 0.05; cur.y += (target.y - cur.y) * 0.05;
-  const s = Math.min(scrollY / innerHeight, 1.5);
-  rig.rotation.y = cur.x + s * 0.8; rig.rotation.x = cur.y + s * 0.3;
-  rings[0].rotation.z = t * 0.25; rings[1].rotation.x = 1.1 + t * 0.18; rings[2].rotation.y = 0.5 + t * 0.3;
-  beads.forEach((b, i) => { const R = rings[i].geometry.parameters.radius, a = t * (0.6 + i * 0.25) + i * 2; b.position.set(Math.cos(a) * R, Math.sin(a) * R, 0); });
-  core.rotation.y = t * 0.3; core.rotation.x = t * 0.15;
-  rig.position.y = Math.sin(t * 0.8) * 0.08;
-  dust.rotation.y = t * 0.03;
-  renderer.render(scene, camera);
-}
-frame();
-</script>
 </body>
 </html>

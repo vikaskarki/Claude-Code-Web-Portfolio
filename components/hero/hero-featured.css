@@ -1,0 +1,143 @@
+/* ==========================================================================
+   Featured project card (bottom-right of the hero)
+   "Featured / AI Order Mgmt / [2025]" + a mini chat-app mock-up that links
+   to the live demo, and a thin progress line under it.
+   Markup: index.html → <div class="featured-project">
+   ========================================================================== */
+
+.featured-project {
+  right: calc(var(--u) * 57);
+  top: calc(var(--u) * 540);
+  width: calc(var(--u) * 226);
+  z-index: 4;
+}
+
+.featured-project__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: calc(var(--u) * 10);
+  font-size: calc(var(--u) * 13);
+  line-height: 1.35;
+}
+
+.featured-project__label,
+.featured-project__year {
+  color: var(--color-text-muted);
+}
+
+.featured-project__name {
+  display: block;
+  font-weight: 600;
+  font-size: calc(var(--u) * 15);
+}
+
+/* The clickable preview */
+.featured-project__card {
+  position: relative;
+  display: block;
+  height: calc(var(--u) * 196);
+  overflow: hidden;
+  background: var(--color-charcoal);
+  border-radius: calc(var(--u) * 10);
+}
+
+.featured-project__screen {
+  position: absolute;
+  inset: 0;
+  transform-origin: 62% 45%;
+  transition: transform .8s var(--ease-out);
+}
+
+.featured-project__card:hover .featured-project__screen {
+  transform: scale(1.08);
+}
+
+/* Mini chat window inside the card */
+.featured-project__chat {
+  position: absolute;
+  inset: calc(var(--u) * 14);
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--u) * 6);
+  padding: calc(var(--u) * 10);
+  background: linear-gradient(160deg, #2A2A2E, #1A1A1D);
+  border: 1px solid rgba(242, 239, 234, .12);
+  border-radius: calc(var(--u) * 8);
+}
+
+.featured-project__chat-dots {
+  display: flex;
+  gap: calc(var(--u) * 4);
+  margin-bottom: calc(var(--u) * 4);
+}
+
+.featured-project__chat-dots span {
+  width: calc(var(--u) * 5);
+  height: calc(var(--u) * 5);
+  border-radius: 50%;
+  background: rgba(242, 239, 234, .3);
+}
+
+.featured-project__message {
+  max-width: 78%;
+  padding: calc(var(--u) * 5) calc(var(--u) * 7);
+  font-size: calc(var(--u) * 9);
+  line-height: 1.3;
+  color: var(--color-ivory);
+  background: rgba(242, 239, 234, .1);
+  border-radius: calc(var(--u) * 7);
+}
+
+.featured-project__message--user {
+  align-self: flex-end;
+  background: var(--color-wine);
+}
+
+/* Round "↗" button that rotates on hover */
+.featured-project__open {
+  position: absolute;
+  right: calc(var(--u) * 10);
+  bottom: calc(var(--u) * 10);
+  width: calc(var(--u) * 36);
+  height: calc(var(--u) * 36);
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--color-charcoal);
+  transition: transform .45s var(--ease-out);
+}
+
+.featured-project__card:hover .featured-project__open {
+  transform: rotate(45deg);
+}
+
+.featured-project__progress {
+  position: relative;
+  height: 2px;
+  margin-top: calc(var(--u) * 12);
+  overflow: hidden;
+  background: rgba(28, 28, 31, .18);
+  border-radius: 2px;
+}
+
+.featured-project__progress-bar {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 38%;
+  background: var(--color-charcoal);
+  transform-origin: left;
+}
+
+/* ---- Phone ---------------------------------------------------------------- */
+@media (max-width: 760px) {
+  .featured-project {
+    order: 8;
+    width: 100%;
+    margin-top: calc(var(--u) * 26);
+  }
+
+  .featured-project__card {
+    height: calc(var(--u) * 210);
+  }
+}

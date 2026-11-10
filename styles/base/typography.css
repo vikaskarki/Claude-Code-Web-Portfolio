@@ -1,0 +1,21 @@
+/* ==========================================================================
+   Typography helpers
+   ========================================================================== */
+
+/* Big condensed headlines: "BIKASH KARKI", "WORKS", "LET'S BUILD" */
+.text-display {
+  font-family: var(--font-display);
+  font-stretch: 104%;
+  font-weight: 640;
+  letter-spacing: -.06em;
+  text-transform: uppercase;
+}
+
+/* Extra-wide small caps: the scroll strip under the hero */
+.text-wide {
+  font-family: var(--font-display);
+  font-stretch: 125%;
+  font-weight: 600;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+}

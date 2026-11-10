@@ -1,0 +1,36 @@
+/* ==========================================================================
+   Site footer — "© 2026 Bikash Karki · Lalitpur, Nepal · Back to top ↑"
+   Markup: index.html → <footer class="site-footer">
+   ========================================================================== */
+
+.site-footer {
+  padding: 0 calc(var(--u) * 69);
+  background: var(--color-paper);
+}
+
+.site-footer__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: calc(var(--u) * 28) 0;
+  font-size: calc(var(--u) * 13);
+  color: #4B5563;
+  border-top: 1px solid rgba(28, 28, 31, .15);
+}
+
+.site-footer__link:hover {
+  color: var(--color-charcoal);
+}
+
+/* ---- Phone ---------------------------------------------------------------- */
+@media (max-width: 760px) {
+  .site-footer {
+    padding: 0 calc(var(--u) * 18);
+  }
+
+  .site-footer__inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: calc(var(--u) * 8);
+  }
+}

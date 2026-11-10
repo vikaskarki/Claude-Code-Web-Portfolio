@@ -1,0 +1,113 @@
+/* ==========================================================================
+   About section — three columns:
+     Experience  → .timeline-item (date, role, company, bullet points)
+     Education   → .timeline-item
+     Toolkit     → .skill-group  (title + chips)
+   Markup: index.html → <section class="about" id="about">
+   ========================================================================== */
+
+.about {
+  padding: 0 calc(var(--u) * 69) calc(var(--u) * 150);
+  color: var(--color-ivory);
+  background: var(--color-charcoal);
+}
+
+.about__columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: calc(var(--u) * 48);
+}
+
+.about__column-title {
+  margin-bottom: calc(var(--u) * 18);
+  font-size: calc(var(--u) * 13);
+  font-weight: 500;
+  color: var(--color-grey);
+}
+
+/* ---- Timeline item (experience / education) ------------------------------ */
+.timeline-item {
+  padding: calc(var(--u) * 22) 0;
+  border-top: 1px solid var(--line-soft);
+}
+
+.timeline-item__date {
+  margin-bottom: calc(var(--u) * 8);
+  font-size: calc(var(--u) * 12);
+  color: var(--color-rose);
+}
+
+.timeline-item__title {
+  font-size: calc(var(--u) * 24);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -.025em;
+}
+
+.timeline-item__place {
+  margin: calc(var(--u) * 4) 0 calc(var(--u) * 12);
+  font-size: calc(var(--u) * 14);
+  color: var(--color-grey);
+}
+
+.timeline-item__points {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--u) * 8);
+  list-style: none;
+}
+
+.timeline-item__point {
+  position: relative;
+  padding-left: calc(var(--u) * 16);
+  font-size: calc(var(--u) * 14);
+  line-height: 1.5;
+  color: #D6D3CE;
+}
+
+.timeline-item__point::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .62em;
+  width: calc(var(--u) * 6);
+  height: 1px;
+  background: var(--color-burgundy);
+}
+
+/* ---- Skill group (toolkit) ------------------------------------------------ */
+.skill-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--u) * 8);
+  padding: calc(var(--u) * 18) 0;
+  border-top: 1px solid var(--line-soft);
+  list-style: none;
+}
+
+.skill-group__title {
+  width: 100%;
+  margin-bottom: calc(var(--u) * 2);
+  font-size: calc(var(--u) * 12);
+  color: var(--color-rose);
+}
+
+.skill-group__chip {
+  padding: calc(var(--u) * 7) calc(var(--u) * 13);
+  font-size: calc(var(--u) * 13);
+  background: rgba(46, 46, 51, .8);
+  border: 1px solid var(--line-soft);
+  border-radius: calc(var(--u) * 999);
+}
+
+/* ---- Phone ---------------------------------------------------------------- */
+@media (max-width: 760px) {
+  .about {
+    padding: 0 calc(var(--u) * 16) calc(var(--u) * 90);
+  }
+
+  .about__columns {
+    grid-template-columns: 1fr;
+    gap: calc(var(--u) * 30);
+  }
+}

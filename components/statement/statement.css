@@ -1,0 +1,67 @@
+/* ==========================================================================
+   Statement — the big centred paragraph whose words fill from grey to
+   ivory as you scroll.
+   Markup: index.html → <section class="statement" id="statement">
+   Behaviour: components/statement/statement.js
+   (Words inside <strong> get the wider display font.)
+   ========================================================================== */
+
+.statement {
+  padding: calc(var(--u) * 170) 0 calc(var(--u) * 230);
+  text-align: center;
+  color: var(--color-ivory);
+  background: var(--color-charcoal);
+}
+
+.statement__text {
+  width: calc(var(--u) * 880);
+  margin: 0 auto;
+  font-size: calc(var(--u) * 52);
+  font-weight: 500;
+  line-height: 1.33;
+  letter-spacing: -.028em;
+}
+
+/* Each word is wrapped in a span by statement.js; its colour is animated there */
+.statement__word {
+  color: var(--color-grey-dark);
+}
+
+.statement__word--key {
+  font-family: var(--font-display);
+  font-stretch: 110%;
+  font-weight: 600;
+  letter-spacing: -.04em;
+}
+
+.statement__subtext {
+  margin-top: calc(var(--u) * 150);
+  font-size: calc(var(--u) * 23);
+  line-height: 1.4;
+  letter-spacing: -.01em;
+}
+
+.statement__subtext-muted {
+  color: var(--color-grey-dark);
+}
+
+/* ---- Phone ---------------------------------------------------------------- */
+@media (max-width: 760px) {
+  .statement {
+    padding: calc(var(--u) * 90) calc(var(--u) * 20) calc(var(--u) * 110);
+  }
+
+  .statement__text {
+    width: 100%;
+    font-size: calc(var(--u) * 28);
+  }
+
+  .statement__subtext {
+    margin-top: calc(var(--u) * 60);
+    font-size: calc(var(--u) * 17);
+  }
+
+  .statement br {
+    display: none;
+  }
+}

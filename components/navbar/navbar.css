@@ -1,0 +1,56 @@
+/* ==========================================================================
+   Navbar (tab bar): Home · Works · About · Contact
+   A white pill with a dark "indicator" that slides to the hovered/active link.
+   Markup: index.html → <nav class="navbar">
+   Behaviour: components/navbar/navbar.js
+   ========================================================================== */
+
+.navbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: calc(var(--u) * 48);
+  padding: calc(var(--u) * 5);
+  background: var(--color-white);
+  border-radius: calc(var(--u) * 999);
+  box-shadow: 0 1px 0 rgba(28, 28, 31, .04);
+}
+
+.navbar__link {
+  position: relative;
+  z-index: 1; /* above the sliding indicator */
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 calc(var(--u) * 20);
+  font-size: calc(var(--u) * 14);
+  border-radius: calc(var(--u) * 999);
+  transition: color .35s;
+}
+
+.navbar__link--active {
+  color: var(--color-ivory);
+}
+
+/* The dark pill behind the active link. Width and position are set in navbar.js */
+.navbar__indicator {
+  position: absolute;
+  top: calc(var(--u) * 5);
+  bottom: calc(var(--u) * 5);
+  left: 0;
+  background: var(--color-charcoal);
+  border-radius: calc(var(--u) * 999);
+  transition: transform .45s var(--ease-out), width .45s var(--ease-out);
+}
+
+/* ---- Phone ---------------------------------------------------------------- */
+@media (max-width: 760px) {
+  .navbar {
+    height: calc(var(--u) * 42);
+  }
+
+  .navbar__link {
+    padding: 0 calc(var(--u) * 11);
+    font-size: calc(var(--u) * 13);
+  }
+}

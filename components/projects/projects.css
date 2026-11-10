@@ -1,0 +1,227 @@
+/* ==========================================================================
+   Projects ("Works") section
+     .project-grid   → 4 large cards that tilt in 3D under the mouse
+     .project-list   → 4 smaller link cards underneath
+   To add a project, copy one <article class="project-card"> (or one
+   <a class="project-mini">) in index.html and change the text and links.
+   Markup: index.html → <section class="projects" id="projects">
+   Behaviour: components/projects/projects.js (3D tilt + glow)
+   ========================================================================== */
+
+.projects {
+  padding: 0 calc(var(--u) * 69) calc(var(--u) * 150);
+  color: var(--color-ivory);
+  background: var(--color-charcoal);
+}
+
+/* ---- Large cards ---------------------------------------------------------- */
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: calc(var(--u) * 20);
+  perspective: 1400px;
+}
+
+.project-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(var(--u) * 400);
+  padding: calc(var(--u) * 32);
+  overflow: hidden;
+  background: linear-gradient(155deg, #2A2A2E 0%, #222225 60%, #1A1A1D 100%);
+  border: 1px solid var(--line-soft);
+  border-radius: calc(var(--u) * 14);
+  transform-style: preserve-3d;
+  transition: transform .5s var(--ease-out), border-color .4s;
+}
+
+.project-card:hover {
+  border-color: rgba(208, 122, 134, .5);
+}
+
+/* Soft burgundy light that follows the mouse (position set in projects.js) */
+.project-card__glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(420px circle at var(--glow-x, 50%) var(--glow-y, 50%), rgba(163, 52, 71, .14), transparent 60%);
+  opacity: 0;
+  transition: opacity .4s;
+}
+
+.project-card:hover .project-card__glow {
+  opacity: 1;
+}
+
+/* Big faint number in the corner: 01, 02 … */
+.project-card__number {
+  position: absolute;
+  right: calc(var(--u) * 24);
+  top: calc(var(--u) * -6);
+  font-size: calc(var(--u) * 200);
+  line-height: 1;
+  color: rgba(242, 239, 234, .05);
+  transform: translateZ(20px);
+}
+
+.project-card__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  transform: translateZ(40px);
+}
+
+.project-card__type {
+  font-size: calc(var(--u) * 13);
+  color: var(--color-rose);
+}
+
+.project-card__open {
+  display: grid;
+  place-items: center;
+  width: calc(var(--u) * 48);
+  height: calc(var(--u) * 48);
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  transition: transform .45s var(--ease-out), background .3s, border-color .3s;
+}
+
+.project-card:hover .project-card__open {
+  transform: rotate(45deg);
+  background: var(--color-wine);
+  border-color: var(--color-wine);
+}
+
+.project-card__body {
+  transform: translateZ(60px);
+}
+
+.project-card__title {
+  margin-bottom: calc(var(--u) * 12);
+  font-size: calc(var(--u) * 44);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -.035em;
+}
+
+.project-card__description {
+  max-width: calc(var(--u) * 460);
+  margin-bottom: calc(var(--u) * 20);
+  font-size: calc(var(--u) * 15);
+  line-height: 1.5;
+  color: var(--color-grey);
+}
+
+.project-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--u) * 8);
+  list-style: none;
+}
+
+.project-card__tag {
+  padding: calc(var(--u) * 6) calc(var(--u) * 12);
+  font-size: calc(var(--u) * 12);
+  border: 1px solid var(--line-strong);
+  border-radius: calc(var(--u) * 999);
+}
+
+.project-card__links {
+  display: flex;
+  gap: calc(var(--u) * 18);
+  margin-top: calc(var(--u) * 18);
+  font-size: calc(var(--u) * 13);
+}
+
+.project-card__link {
+  padding-bottom: 2px;
+  border-bottom: 1px solid var(--line-strong);
+  transition: color .3s, border-color .3s;
+}
+
+.project-card__link:hover {
+  color: var(--color-rose);
+  border-color: var(--color-rose);
+}
+
+/* ---- Small cards ---------------------------------------------------------- */
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: calc(var(--u) * 20);
+  margin-top: calc(var(--u) * 20);
+}
+
+.project-mini {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--u) * 10);
+  min-height: calc(var(--u) * 180);
+  padding: calc(var(--u) * 22);
+  border: 1px solid var(--line-soft);
+  border-radius: calc(var(--u) * 12);
+  transition: transform .4s var(--ease-out), border-color .4s, background .4s;
+}
+
+.project-mini:hover {
+  transform: translateY(calc(var(--u) * -6));
+  border-color: rgba(163, 52, 71, .5);
+  background: rgba(46, 46, 51, .5);
+}
+
+.project-mini__meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: calc(var(--u) * 12);
+  color: var(--color-rose);
+}
+
+.project-mini__title {
+  font-size: calc(var(--u) * 22);
+  font-weight: 500;
+  letter-spacing: -.025em;
+}
+
+.project-mini__description {
+  margin-top: auto;
+  font-size: calc(var(--u) * 13);
+  line-height: 1.45;
+  color: var(--color-grey);
+}
+
+/* ---- Phone ---------------------------------------------------------------- */
+@media (max-width: 760px) {
+  .projects {
+    padding: 0 calc(var(--u) * 16) calc(var(--u) * 90);
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card {
+    height: auto;
+    min-height: calc(var(--u) * 360);
+    padding: calc(var(--u) * 24);
+  }
+
+  .project-card__title       { font-size: calc(var(--u) * 32); }
+  .project-card__description { font-size: calc(var(--u) * 14); }
+  .project-card__number      { font-size: calc(var(--u) * 140); }
+
+  .project-list {
+    grid-template-columns: 1fr 1fr;
+    gap: calc(var(--u) * 12);
+  }
+
+  .project-mini {
+    min-height: calc(var(--u) * 170);
+    padding: calc(var(--u) * 16);
+  }
+
+  .project-mini__title {
+    font-size: calc(var(--u) * 18);
+  }
+}

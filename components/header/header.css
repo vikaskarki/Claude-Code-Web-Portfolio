@@ -1,0 +1,87 @@
+/* ==========================================================================
+   Site header
+   The top bar that sits over the hero: navbar (left), location/status
+   (middle right) and the "Contact Me" button (far right).
+   Markup: index.html → <header class="site-header">
+   ========================================================================== */
+
+.site-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: calc(var(--u) * 170);
+  z-index: 10;
+}
+
+.site-header > * {
+  position: absolute;
+}
+
+.site-header .navbar {
+  position: absolute; /* overrides navbar.css's position: relative */
+  left: calc(var(--u) * 57);
+  top: calc(var(--u) * 61);
+}
+
+/* "Lalitpur, Nepal / Open to work · 2026" */
+.site-header__status {
+  left: calc(var(--u) * 1010);
+  top: calc(var(--u) * 70);
+  font-size: calc(var(--u) * 13);
+  line-height: 1.35;
+}
+
+.site-header__status-place {
+  display: block;
+  color: var(--color-text-muted);
+}
+
+/* "Contact Me ↗" — becomes a round arrow-only button on phones */
+.site-header__contact {
+  left: calc(var(--u) * 1237);
+  top: calc(var(--u) * 63);
+  width: calc(var(--u) * 144);
+  height: calc(var(--u) * 46);
+}
+
+.site-header__contact-icon {
+  display: none;
+}
+
+/* ---- Phone ---------------------------------------------------------------- */
+@media (max-width: 760px) {
+  .site-header {
+    position: relative;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: calc(var(--u) * 20) calc(var(--u) * 18) 0;
+    background: var(--color-paper);
+  }
+
+  .site-header > *,
+  .site-header .navbar {
+    position: relative;
+    left: auto;
+    top: auto;
+  }
+
+  .site-header__status {
+    order: 3;
+    width: 100%;
+    margin-top: calc(var(--u) * 18);
+    font-size: calc(var(--u) * 12);
+  }
+
+  .site-header__contact {
+    width: calc(var(--u) * 42);
+    height: calc(var(--u) * 42);
+    padding: 0;
+  }
+
+  .site-header__contact-label { display: none; }
+  .site-header__contact-icon  { display: inline-block; }
+}

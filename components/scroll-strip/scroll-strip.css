@@ -1,0 +1,54 @@
+/* ==========================================================================
+   Scroll strip — dark bar under the hero:
+   "EST 2020"  ·  "SCROLL DOWN (↓)"  ·  "BASED IN NEPAL"
+   Markup: index.html → <div class="scroll-strip">
+   ========================================================================== */
+
+.scroll-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: calc(var(--u) * 111);
+  padding: 0 calc(var(--u) * 57);
+  font-size: calc(var(--u) * 14);
+  color: var(--color-ivory);
+  background: var(--color-charcoal);
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.scroll-strip__muted {
+  color: var(--color-grey-dark);
+}
+
+.scroll-strip__cue {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--u) * 14);
+}
+
+.scroll-strip__cue-icon {
+  display: grid;
+  place-items: center;
+  width: calc(var(--u) * 38);
+  height: calc(var(--u) * 38);
+  border-radius: 50%;
+  background: var(--color-ivory);
+  animation: scroll-strip-bob 2.4s ease-in-out infinite;
+}
+
+@keyframes scroll-strip-bob {
+  50% { transform: translateY(4px); }
+}
+
+/* ---- Phone ---------------------------------------------------------------- */
+@media (max-width: 760px) {
+  .scroll-strip {
+    height: calc(var(--u) * 80);
+    padding: 0 calc(var(--u) * 18);
+    font-size: calc(var(--u) * 11);
+  }
+
+  .scroll-strip__cue-label {
+    display: none;
+  }
+}

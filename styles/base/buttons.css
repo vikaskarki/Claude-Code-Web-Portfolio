@@ -1,0 +1,45 @@
+/* ==========================================================================
+   Buttons
+   <a class="btn">Label <span class="btn__arrow">↗</span></a>
+   Variants: .btn--outline (transparent with a border)
+   ========================================================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(var(--u) * 8);
+  background: var(--color-wine);
+  color: var(--color-ivory);
+  border-radius: calc(var(--u) * 999);
+  font-size: calc(var(--u) * 14);
+  font-weight: 500;
+  white-space: nowrap;
+  transition: transform .3s, background .3s, box-shadow .3s, color .3s;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  background: var(--color-wine-dark);
+  box-shadow: 0 6px 18px rgba(28, 28, 31, .25);
+}
+
+.btn__arrow {
+  display: inline-block;
+  transition: transform .35s var(--ease-out);
+}
+
+.btn:hover .btn__arrow {
+  transform: translate(2px, -2px);
+}
+
+.btn--outline {
+  background: transparent;
+  color: var(--color-charcoal);
+  border: 1px solid rgba(28, 28, 31, .3);
+}
+
+.btn--outline:hover {
+  background: var(--color-charcoal);
+  color: var(--color-ivory);
+}

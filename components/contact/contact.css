@@ -1,0 +1,76 @@
+/* ==========================================================================
+   Contact section — "LET'S BUILD SOMETHING." with email / LinkedIn /
+   GitHub buttons. The email address lives in the "Say hello" mailto link.
+   Markup: index.html → <section class="contact" id="contact">
+   ========================================================================== */
+
+.contact {
+  position: relative;
+  padding: calc(var(--u) * 140) calc(var(--u) * 69) calc(var(--u) * 120);
+  overflow: hidden;
+  color: var(--color-charcoal);
+  background: var(--color-paper);
+}
+
+.contact__label {
+  margin-bottom: calc(var(--u) * 30);
+  font-size: calc(var(--u) * 13);
+}
+
+.contact__heading {
+  font-size: calc(var(--u) * 150);
+  line-height: .84;
+}
+
+.contact__heading-accent {
+  color: var(--color-wine);
+}
+
+.contact__row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: calc(var(--u) * 24);
+  margin-top: calc(var(--u) * 56);
+}
+
+.contact__text {
+  max-width: calc(var(--u) * 480);
+  font-size: calc(var(--u) * 18);
+  line-height: 1.5;
+  color: var(--color-text-body);
+}
+
+.contact__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--u) * 12);
+}
+
+.contact__actions .btn {
+  height: calc(var(--u) * 56);
+  padding: 0 calc(var(--u) * 28);
+  font-size: calc(var(--u) * 15);
+}
+
+/* ---- Phone ---------------------------------------------------------------- */
+@media (max-width: 760px) {
+  .contact {
+    padding: calc(var(--u) * 90) calc(var(--u) * 18) calc(var(--u) * 70);
+  }
+
+  .contact__heading {
+    font-size: calc(var(--u) * 62);
+  }
+
+  .contact__text {
+    font-size: calc(var(--u) * 16);
+  }
+
+  .contact__actions .btn {
+    height: calc(var(--u) * 50);
+    padding: 0 calc(var(--u) * 20);
+    font-size: calc(var(--u) * 14);
+  }
+}
