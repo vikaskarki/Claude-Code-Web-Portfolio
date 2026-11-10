@@ -1,6 +1,6 @@
 # Bikash Karki — Portfolio
 
-A 3D personal portfolio site with a Ralph Lauren "Polo navy" palette (navy, cream and brass).
+A 3D personal portfolio site with a Ralph Lauren–inspired burgundy and grey palette.
 
 **Live:** https://vikaskarki.github.io/Claude-Code-Web-Portfolio/
 
@@ -21,6 +21,3 @@ A 3D personal portfolio site with a Ralph Lauren "Polo navy" palette (navy, crea
 python -m http.server 5173
 ```
 Then open http://localhost:5173.
-
-## Photo
-Put your photo at `assets/bikash.jpg`. Until that file exists, the hero shows the 3D object without a photo.
